@@ -15,17 +15,12 @@
 */
 package architex.labs.coffeedrop.presentation
 
-import android.os.Bundle
+import  android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.rememberNavController
+import architex.labs.coffeedrop.application.navigation.NavGraph
 import architex.labs.coffeedrop.presentation.theme.CoffeeDropTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,26 +29,9 @@ class MainActivity : ComponentActivity() {
 		super.onCreate(savedInstanceState)
 		setContent {
 			CoffeeDropTheme {
-				Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-					Greeting("Android")
-				}
+				val navController = rememberNavController()
+				NavGraph(navController)
 			}
 		}
-	}
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-	Text(
-		text = "Hello $name!",
-		modifier = modifier
-	)
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-	CoffeeDropTheme {
-		Greeting("Android")
 	}
 }
