@@ -55,6 +55,7 @@ dependencies {
     val coreVersion = "1.10.0"
     val lifecycleVersion = "2.6.1"
     val activityComposeVersion = "1.7.1"
+    val splashScreenVersion = "1.0.1"
 
     implementation ("androidx.core:core-ktx:$coreVersion")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
@@ -64,6 +65,8 @@ dependencies {
     implementation ("androidx.compose.ui:ui-graphics")
     implementation ("androidx.compose.ui:ui-tooling-preview")
     implementation ("androidx.compose.material3:material3")
+    implementation ("androidx.core:core-splashscreen:$splashScreenVersion")
+
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
