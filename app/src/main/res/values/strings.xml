@@ -15,4 +15,6 @@
     -->
 <resources>
     <string name="app_name">Coffee Drop</string>
+    <string name="description_menu">Menu Icon</string>
+    <string name="description_avatar">Avatar</string>
 </resources>
