@@ -17,16 +17,71 @@ package architex.labs.coffeedrop.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import architex.labs.coffeedrop.R
+
+val CircularStd = FontFamily(
+	Font(
+		resId = R.font.circular_std_book,
+		weight = FontWeight.Normal
+	),
+
+	Font(
+		resId = R.font.circular_std_bold,
+		weight = FontWeight.Bold
+	)
+)
 
 val Typography = Typography(
+	displayLarge = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Bold,
+		fontSize = 32.sp,
+		lineHeight = 40.sp
+	),
+
+	displayMedium = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Bold,
+		fontSize = 24.sp,
+		lineHeight = 30.sp
+	),
+
 	bodyLarge = TextStyle(
-		fontFamily = FontFamily.Default,
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Bold,
+		fontSize = 18.sp,
+		lineHeight = 23.sp
+	),
+
+	bodyMedium = TextStyle(
+		fontFamily = CircularStd,
 		fontWeight = FontWeight.Normal,
 		fontSize = 16.sp,
-		lineHeight = 24.sp,
-		letterSpacing = 0.5.sp
-	)
+		lineHeight = 20.sp
+	),
+
+	labelMedium = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Normal,
+		fontSize = 18.sp,
+		lineHeight = 23.sp
+	),
+
+	titleMedium = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Bold,
+		fontSize = 16.sp,
+		lineHeight = 20.sp
+	),
+
+	titleSmall = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Bold,
+		fontSize = 14.sp,
+		lineHeight = 18.sp
+	),
 )
