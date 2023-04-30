@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Coffee Drop"
-include ':app'
+include(":app")
