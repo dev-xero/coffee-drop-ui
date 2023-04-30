@@ -7,15 +7,6 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="SERIAL_NUMBER" />
-            <value value="6cd08f77" />
-          </Key>
-        </deviceKey>
-      </Target>
-      <Target>
-        <type value="RUNNING_DEVICE_TARGET" />
-        <deviceKey>
-          <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
             <value value="C:\Users\elo48\.android\avd\Xero_13.avd" />
           </Key>
