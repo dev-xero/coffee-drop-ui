@@ -1,0 +1,31 @@
+<!--
+    * Copyright (C) [2023 - Present] - Xero
+    *
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    *     https://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+    -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:gravity="center">
+    <vector
+        android:width="164dp"
+        android:height="19dp"
+        android:viewportWidth="164"
+        android:viewportHeight="19">
+      <path
+          android:pathData="M9.65,18.36C14.42,18.36 16.87,15.19 17.52,12.58L14.42,11.64C13.97,13.22 12.55,15.12 9.65,15.12C6.91,15.12 4.37,13.13 4.37,9.5C4.37,5.64 7.06,3.82 9.6,3.82C12.55,3.82 13.87,5.62 14.28,7.25L17.4,6.26C16.73,3.5 14.3,0.62 9.6,0.62C5.04,0.62 0.94,4.08 0.94,9.5C0.94,14.93 4.9,18.36 9.65,18.36ZM22.53,9.48C22.53,5.64 25.22,3.82 27.84,3.82C30.48,3.82 33.16,5.64 33.16,9.48C33.16,13.32 30.48,15.14 27.84,15.14C25.22,15.14 22.53,13.32 22.53,9.48ZM19.1,9.5C19.1,14.98 23.23,18.36 27.84,18.36C32.47,18.36 36.6,14.98 36.6,9.5C36.6,4.01 32.47,0.62 27.84,0.62C23.23,0.62 19.1,4.01 19.1,9.5ZM42.8,18V11.38H49.4V8.33H42.78V4.13H50.22V0.98H39.47V18H42.8ZM56.28,18V11.38H62.88V8.33H56.26V4.13H63.7V0.98H52.94V18H56.28ZM77.08,18V14.88H69.73V10.94H76.38V7.99H69.73V4.1H77.08V0.98H66.42V18H77.08ZM91.05,18V14.88H83.7V10.94H90.35V7.99H83.7V4.1H91.05V0.98H80.39V18H91.05Z"
+          android:fillColor="#ED8B60"/>
+      <path
+          android:pathData="M103.6,14.93V4.06H106.26C109.05,4.06 111.35,5.81 111.35,9.5C111.35,13.2 109.02,14.93 106.24,14.93H103.6ZM106.36,18C111.21,18 114.78,14.88 114.78,9.5C114.78,4.13 111.23,0.98 106.38,0.98H100.29V18H106.36ZM126.06,18H129.75L126.1,11.04C128.34,10.39 129.73,8.59 129.73,6.22C129.73,3.26 127.61,0.98 124.3,0.98H117.65V18H120.99V11.45H122.72L126.06,18ZM120.99,8.59V3.86H123.68C125.36,3.86 126.34,4.8 126.34,6.24C126.34,7.63 125.36,8.59 123.68,8.59H120.99ZM134.96,9.48C134.96,5.64 137.65,3.82 140.27,3.82C142.91,3.82 145.59,5.64 145.59,9.48C145.59,13.32 142.91,15.14 140.27,15.14C137.65,15.14 134.96,13.32 134.96,9.48ZM131.53,9.5C131.53,14.98 135.66,18.36 140.27,18.36C144.9,18.36 149.03,14.98 149.03,9.5C149.03,4.01 144.9,0.62 140.27,0.62C135.66,0.62 131.53,4.01 131.53,9.5ZM155.23,8.74V3.86H157.85C159.51,3.86 160.51,4.8 160.51,6.31C160.51,7.78 159.51,8.74 157.85,8.74H155.23ZM158.26,11.59C161.62,11.59 163.85,9.38 163.85,6.29C163.85,3.22 161.62,0.98 158.26,0.98H151.9V18H155.21V11.59H158.26Z"
+          android:fillColor="#F6F6F7"/>
+    </vector>
+  </item>
+</layer-list>
