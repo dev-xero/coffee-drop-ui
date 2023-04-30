@@ -16,14 +16,23 @@
 package architex.labs.coffeedrop.presentation.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.AppBar
+import architex.labs.coffeedrop.presentation.theme.CircularStd
+import architex.labs.coffeedrop.presentation.theme.Neutrals100
+import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -38,7 +47,26 @@ fun HomeScreen(
 		},
 		content = { contentPadding ->
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
-				item {}
+				item {
+					Column(
+						modifier = Modifier.padding(16.dp)
+					) {
+						Text(
+							text = stringResource(id = R.string.headline_1),
+							style = MaterialTheme.typography.headlineMedium,
+							color = Neutrals200,
+							fontFamily = CircularStd,
+							fontWeight = FontWeight.Bold
+						)
+						Text(
+							text = stringResource(id = R.string.headline_2),
+							style = MaterialTheme.typography.headlineLarge,
+							color = Neutrals100,
+							fontFamily = CircularStd,
+							fontWeight = FontWeight.Bold
+						)
+					}
+				}
 			}
 		}
 	)

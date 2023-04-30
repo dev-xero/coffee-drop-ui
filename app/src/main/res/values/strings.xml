@@ -15,6 +15,10 @@
     -->
 <resources>
     <string name="app_name">Coffee Drop</string>
+
     <string name="description_menu">Menu Icon</string>
     <string name="description_avatar">Avatar</string>
+
+    <string name="headline_1">Find the best</string>
+    <string name="headline_2">coffee for you</string>
 </resources>
