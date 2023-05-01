@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -32,11 +32,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
@@ -54,7 +51,7 @@ dependencies {
     val splashScreenVersion = "1.0.1"
     val viewModelVersion = "2.6.1"
     val navigationComposeVersion = "2.5.3"
-    val daggerVersion = "2.45"
+    val daggerVersion = "2.44.2"
     val hiltVersion = "1.0.0"
 
     implementation ("androidx.core:core-ktx:$coreVersion")
