@@ -52,6 +52,7 @@ dependencies {
     val lifecycleVersion = "2.6.1"
     val activityComposeVersion = "1.7.1"
     val splashScreenVersion = "1.0.1"
+    val viewModelVersion = "2.6.1"
     val navigationComposeVersion = "2.5.3"
     val daggerVersion = "2.45"
     val hiltVersion = "1.0.0"
@@ -65,6 +66,7 @@ dependencies {
     implementation ("androidx.compose.ui:ui-tooling-preview")
     implementation ("androidx.compose.material3:material3")
     implementation ("androidx.core:core-splashscreen:$splashScreenVersion")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:$viewModelVersion")
     implementation ("androidx.navigation:navigation-compose:$navigationComposeVersion")
     implementation ("com.google.dagger:hilt-android:$daggerVersion")
     kapt ("com.google.dagger:hilt-android-compiler:$daggerVersion")
