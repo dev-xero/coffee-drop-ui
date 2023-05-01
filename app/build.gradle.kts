@@ -1,8 +1,8 @@
-import com.android.build.api.dsl.Packaging
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -44,11 +44,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.6"
     }
-    fun Packaging.() {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+    packagingOptions.resources.excludes.add("META-INF/{AL2.0,LGPL2.1}")
 }
 
 dependencies {
@@ -57,6 +53,8 @@ dependencies {
     val activityComposeVersion = "1.7.1"
     val splashScreenVersion = "1.0.1"
     val navigationComposeVersion = "2.5.3"
+    val daggerVersion = "2.45"
+    val hiltVersion = "1.0.0"
 
     implementation ("androidx.core:core-ktx:$coreVersion")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
@@ -68,6 +66,9 @@ dependencies {
     implementation ("androidx.compose.material3:material3")
     implementation ("androidx.core:core-splashscreen:$splashScreenVersion")
     implementation ("androidx.navigation:navigation-compose:$navigationComposeVersion")
+    implementation ("com.google.dagger:hilt-android:$daggerVersion")
+    kapt ("com.google.dagger:hilt-android-compiler:$daggerVersion")
+    implementation ("androidx.hilt:hilt-navigation-compose:$hiltVersion")
 
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
@@ -76,4 +77,8 @@ dependencies {
     androidTestImplementation ("androidx.compose.ui:ui-test-junit4")
     debugImplementation ("androidx.compose.ui:ui-tooling")
     debugImplementation ("androidx.compose.ui:ui-test-manifest")
+}
+
+kapt {
+    correctErrorTypes = true
 }
