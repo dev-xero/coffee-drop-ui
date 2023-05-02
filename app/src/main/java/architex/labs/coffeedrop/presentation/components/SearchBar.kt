@@ -71,13 +71,14 @@ fun SearchBar(
 			Icon(
 				painter = painterResource(id = R.drawable.icon_search),
 				contentDescription = stringResource(id = R.string.description_search),
-				tint = Neutrals100,
 				modifier = Modifier.size(24.dp)
 			)
 		},
 		colors = TextFieldDefaults.outlinedTextFieldColors(
 			containerColor = Neutrals300,
-			focusedBorderColor = Primary,
+			focusedLeadingIconColor = Primary,
+			unfocusedLeadingIconColor = Neutrals100,
+			focusedBorderColor = Neutrals300,
 			unfocusedBorderColor = Neutrals300,
 			textColor = Neutrals100
 		),
