@@ -19,6 +19,7 @@
     <string name="description_menu">Menu Icon</string>
     <string name="description_avatar">Avatar</string>
     <string name="description_search">Search Icon</string>
+    <string name="description_rating">Rating</string>
 
     <string name="headline_1">Find the best</string>
     <string name="headline_2">coffee for you</string>

@@ -84,4 +84,11 @@ val Typography = Typography(
 		fontSize = 14.sp,
 		lineHeight = 18.sp
 	),
+
+	labelSmall = TextStyle(
+		fontFamily = CircularStd,
+		fontWeight = FontWeight.Normal,
+		fontSize = 14.sp,
+		lineHeight = 18.sp
+	),
 )

@@ -19,6 +19,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -30,6 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.AppBar
+import architex.labs.coffeedrop.presentation.components.CoffeeCard
 import architex.labs.coffeedrop.presentation.components.CoffeeFilterBar
 import architex.labs.coffeedrop.presentation.components.SearchBar
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
@@ -82,6 +84,18 @@ fun HomeScreen(
 						filterOptions = viewModel.coffeeTypeList,
 						updateSelectedCoffeeType = { viewModel.updateSelectedCoffeeType(it) }
 					)
+				}
+
+				item {
+					LazyRow(
+						modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp)
+					) {
+						for (coffee in viewModel.coffeeList.coffeeList) {
+							item {
+								CoffeeCard(coffee = coffee)
+							}
+						}
+					}
 				}
 			}
 		}
