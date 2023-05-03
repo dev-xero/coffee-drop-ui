@@ -84,8 +84,9 @@ fun HomeScreen(
 				item {
 					CoffeeFilterBar(
 						modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-						activeOption = viewModel.selectedType,
-						filterOptions = viewModel.coffeeTypeList
+						activeOption = viewModel.selectedCoffeeType,
+						filterOptions = viewModel.coffeeTypeList,
+						updateSelectedCoffeeType = { viewModel.updateSelectedCoffeeType(it) }
 					)
 				}
 			}

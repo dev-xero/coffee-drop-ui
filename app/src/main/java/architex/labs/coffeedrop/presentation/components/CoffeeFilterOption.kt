@@ -16,6 +16,8 @@
 package architex.labs.coffeedrop.presentation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -24,8 +26,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 import architex.labs.coffeedrop.presentation.theme.CircularStd
@@ -36,10 +41,33 @@ import architex.labs.coffeedrop.presentation.theme.Primary
 fun CoffeeFilterOption(
 	modifier: Modifier = Modifier,
 	filterOption: CoffeeType,
-	isActiveOption: Boolean
+	isActiveOption: Boolean,
+	updateSelectedCoffeeType: () -> Unit
 ) {
+	// Extending Modifier to disable ripple effect
+	fun Modifier.clickableNoRipple(
+		enabled: Boolean = true,
+		onClickLabel: String? = null,
+		role: Role? = null,
+		onClick: () -> Unit,
+	): Modifier = composed {
+		this.clickable(
+			interactionSource = remember { MutableInteractionSource() },
+			indication = null,
+			enabled = enabled,
+			onClickLabel = onClickLabel,
+			role = role,
+			onClick = onClick
+		)
+	}
 
-	Column(modifier = modifier.padding(horizontal = 12.dp)) {
+	Column(
+		modifier = modifier
+			.padding(horizontal = 12.dp)
+			.clickableNoRipple(
+				onClick = updateSelectedCoffeeType
+			)
+	) {
 		Text(
 			text = filterOption.type,
 			color = if (isActiveOption) Primary else Neutrals200,
@@ -48,13 +76,11 @@ fun CoffeeFilterOption(
 			fontFamily = CircularStd
 		)
 
-		if (isActiveOption) {
-			Box(
-				modifier = Modifier
-					.size(width = 40.dp, height = 4.dp)
-					.clip(RoundedCornerShape(2.dp))
-					.background(Primary)
-			)
-		}
+		Box(
+			modifier = Modifier
+				.size(width = if (isActiveOption) 40.dp else 0.dp, height = 4.dp)
+				.clip(RoundedCornerShape(2.dp))
+				.background(Primary)
+		)
 	}
 }

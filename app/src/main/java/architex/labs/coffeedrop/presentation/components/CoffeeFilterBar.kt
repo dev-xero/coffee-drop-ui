@@ -25,7 +25,8 @@ import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 fun CoffeeFilterBar(
 	modifier: Modifier = Modifier,
 	activeOption: CoffeeType,
-	filterOptions: List<CoffeeType>
+	filterOptions: List<CoffeeType>,
+	updateSelectedCoffeeType: (CoffeeType) -> Unit
 ) {
 
 	LazyRow(
@@ -35,7 +36,8 @@ fun CoffeeFilterBar(
 			for (filterOption in filterOptions) {
 				CoffeeFilterOption(
 					filterOption = filterOption,
-					isActiveOption = filterOption == activeOption
+					isActiveOption = filterOption == activeOption,
+					updateSelectedCoffeeType = { updateSelectedCoffeeType(filterOption) }
 				)
 			}
 		}
