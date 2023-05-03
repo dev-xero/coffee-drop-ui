@@ -13,22 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.presentation.viewmodels
+package architex.labs.coffeedrop.application.di
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import androidx.lifecycle.ViewModel
-import androidx.navigation.NavHostController
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@HiltViewModel
-class HomeScreenViewModel @Inject constructor (): ViewModel() {
-	var searchString: String by mutableStateOf("")
-
-	fun updateSearchString(newString: String) {
-		searchString = newString
-	}
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
 
 }

@@ -16,11 +16,13 @@
 package architex.labs.coffeedrop.application.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import architex.labs.coffeedrop.application.navigation.routes.NavRoutes
 import architex.labs.coffeedrop.presentation.screens.HomeScreen
+import architex.labs.coffeedrop.presentation.viewmodels.HomeScreenViewModel
 
 @Composable
 fun NavGraph(
@@ -28,7 +30,7 @@ fun NavGraph(
 ) {
 	NavHost(navController = navController, startDestination = NavRoutes.HomeScreen.route) {
 		composable(route = NavRoutes.HomeScreen.route) {
-			HomeScreen()
+			HomeScreen(viewModel = hiltViewModel())
 		}
 		composable(route = NavRoutes.CoffeeDetailScreen.route) {}
 	}

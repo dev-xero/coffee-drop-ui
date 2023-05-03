@@ -24,10 +24,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
@@ -40,17 +36,15 @@ import architex.labs.coffeedrop.presentation.theme.CircularStd
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
 import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
+import architex.labs.coffeedrop.presentation.viewmodels.HomeScreenViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-	modifier: Modifier = Modifier
+	modifier: Modifier = Modifier,
+	viewModel: HomeScreenViewModel
 ) {
 	val focusManager = LocalFocusManager.current
-	var searchString: String by remember { mutableStateOf("") }
-	fun onSearchStringChange(it: String) {
-		searchString = it
-	}
 
 	Scaffold(
 		modifier = modifier.background(Neutrals400),
@@ -81,8 +75,8 @@ fun HomeScreen(
 
 					SearchBar(
 						focusManager = focusManager,
-						searchValue = searchString,
-						onSearchValueChange = { onSearchStringChange(it) }
+						searchValue = viewModel.searchString,
+						onSearchValueChange = { viewModel.updateSearchString(it) }
 					)
 				}
 			}
