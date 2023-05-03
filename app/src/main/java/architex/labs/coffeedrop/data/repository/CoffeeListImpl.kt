@@ -13,21 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.domain.models
+package architex.labs.coffeedrop.data.repository
 
+import architex.labs.coffeedrop.R
+import architex.labs.coffeedrop.domain.models.Coffee
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
+import architex.labs.coffeedrop.domain.repository.CoffeeList
 
-data class Coffee(
-	val imageResID: Int,
-	val name: Int,
-	val description: Int,
-	val variant: String,
-	val coffeeType: CoffeeType,
-	val price: Double,
-	val rating: Double,
-	val reviews: Int,
-	val roastingLevel: RoastingLevel,
-	val coffeeSize: List<CoffeeSize>
-)
+class CoffeeListImpl : CoffeeList {
+
+	override val coffeeList: List<Coffee>
+		get() = listOf(
+			Coffee(
+				imageResID = R.drawable.image_1,
+				name = R.string.cappuccino,
+				description = R.string.cappuccino_description,
+				variant = "With Oak Milk",
+				coffeeType = CoffeeType.Cappuccino,
+				price = 4.20,
+				rating = 4.6,
+				reviews = 18048,
+				roastingLevel = RoastingLevel.MediumRoasted,
+				coffeeSize = listOf(CoffeeSize.Small, CoffeeSize.Medium, CoffeeSize.Large)
+			)
+		)
+}

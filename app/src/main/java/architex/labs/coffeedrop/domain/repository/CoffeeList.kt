@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.domain.models
+package architex.labs.coffeedrop.domain.repository
 
-import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
-import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
-import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
+import architex.labs.coffeedrop.domain.models.Coffee
 
-data class Coffee(
-	val imageResID: Int,
-	val name: Int,
-	val description: Int,
-	val variant: String,
-	val coffeeType: CoffeeType,
-	val price: Double,
-	val rating: Double,
-	val reviews: Int,
-	val roastingLevel: RoastingLevel,
-	val coffeeSize: List<CoffeeSize>
-)
+interface CoffeeList {
+	val coffeeList: List<Coffee>
+}
