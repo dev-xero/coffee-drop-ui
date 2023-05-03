@@ -15,9 +15,29 @@
  */
 package architex.labs.coffeedrop.presentation.components
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 
 @Composable
-fun CoffeeFilterBar() {
+fun CoffeeFilterBar(
+	modifier: Modifier = Modifier,
+	activeOption: CoffeeType,
+	filterOptions: List<CoffeeType>
+) {
 
+	LazyRow(
+		modifier = modifier.fillMaxWidth()
+	) {
+		item {
+			for (filterOption in filterOptions) {
+				CoffeeFilterOption(
+					filterOption = filterOption,
+					isActiveOption = filterOption == activeOption
+				)
+			}
+		}
+	}
 }
