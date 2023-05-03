@@ -29,7 +29,7 @@ object AppModule {
 
 	@Singleton
 	@Provides
-	fun ProvidesCoffeeList(): CoffeeList {
+	fun providesCoffeeList(): CoffeeList {
 		return CoffeeListImpl()
 	}
 }
