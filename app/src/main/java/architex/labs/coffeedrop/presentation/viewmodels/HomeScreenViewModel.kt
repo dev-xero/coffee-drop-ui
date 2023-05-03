@@ -15,18 +15,18 @@
  */
 package architex.labs.coffeedrop.presentation.viewmodels
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavHostController
-import architex.labs.coffeedrop.data.repository.CoffeeListImpl
+import architex.labs.coffeedrop.domain.repository.CoffeeList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeScreenViewModel @Inject constructor (): ViewModel() {
+class HomeScreenViewModel @Inject constructor (
+	val coffeeList: CoffeeList
+): ViewModel() {
 	var searchString: String by mutableStateOf("")
 
 	fun updateSearchString(newString: String) {

@@ -15,10 +15,21 @@
  */
 package architex.labs.coffeedrop.application.di
 
+import architex.labs.coffeedrop.data.repository.CoffeeListImpl
+import architex.labs.coffeedrop.domain.repository.CoffeeList
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {}
+object AppModule {
+
+	@Singleton
+	@Provides
+	fun ProvidesCoffeeList(): CoffeeList {
+		return CoffeeListImpl()
+	}
+}
