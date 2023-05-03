@@ -19,16 +19,33 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavHostController
+import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
+import architex.labs.coffeedrop.domain.repository.CoffeeList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeScreenViewModel @Inject constructor (): ViewModel() {
+class HomeScreenViewModel @Inject constructor (
+	val coffeeList: CoffeeList
+): ViewModel() {
 	var searchString: String by mutableStateOf("")
+	var selectedCoffeeType: CoffeeType by mutableStateOf(CoffeeType.Cappuccino)
+	val coffeeTypeList: List<CoffeeType> = listOf(
+		CoffeeType.Cappuccino,
+		CoffeeType.Cortado,
+		CoffeeType.Espresso,
+		CoffeeType.DoubleEspresso,
+		CoffeeType.Latte,
+		CoffeeType.Mocha,
+		CoffeeType.Macho
+	)
 
 	fun updateSearchString(newString: String) {
 		searchString = newString
+	}
+
+	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
+		selectedCoffeeType = newCoffeeType
 	}
 
 }

@@ -13,23 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.application.di
+package architex.labs.coffeedrop.domain.repository
 
-import architex.labs.coffeedrop.data.repository.CoffeeListImpl
-import architex.labs.coffeedrop.domain.repository.CoffeeList
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import architex.labs.coffeedrop.domain.models.Coffee
 
-@Module
-@InstallIn(SingletonComponent::class)
-object AppModule {
-
-	@Singleton
-	@Provides
-	fun providesCoffeeList(): CoffeeList {
-		return CoffeeListImpl()
-	}
+interface CoffeeList {
+	val coffeeList: List<Coffee>
 }

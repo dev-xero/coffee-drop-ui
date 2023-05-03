@@ -31,6 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.AppBar
+import architex.labs.coffeedrop.presentation.components.CoffeeFilterBar
 import architex.labs.coffeedrop.presentation.components.SearchBar
 import architex.labs.coffeedrop.presentation.theme.CircularStd
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
@@ -77,6 +78,15 @@ fun HomeScreen(
 						focusManager = focusManager,
 						searchValue = viewModel.searchString,
 						onSearchValueChange = { viewModel.updateSearchString(it) }
+					)
+				}
+
+				item {
+					CoffeeFilterBar(
+						modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+						activeOption = viewModel.selectedCoffeeType,
+						filterOptions = viewModel.coffeeTypeList,
+						updateSelectedCoffeeType = { viewModel.updateSelectedCoffeeType(it) }
 					)
 				}
 			}

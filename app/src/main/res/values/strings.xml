@@ -22,5 +22,25 @@
 
     <string name="headline_1">Find the best</string>
     <string name="headline_2">coffee for you</string>
-    <string name="search_bar_placeholder">Find your coffee...</string>
+    <string name="search_bar_placeholder">Find your coffee…</string>
+
+    <string name="cappuccino">Cappuccino</string>
+    <string name="macho">Macho</string>
+    <string name="espresso">Espresso</string>
+    <string name="double_espresso">Double Espresso</string>
+    <string name="cortado">Cortado</string>
+    <string name="mocha">Mocha</string>
+
+    <string name="cappuccino_description">
+        Cappuccino is a popular coffee beverage that originated in Italy. It consists of equal
+        parts of espresso, steamed milk, and milk foam.\n
+        The drink is typically served in a small cup, and the espresso is first brewed and poured
+        into the cup. Then, the steamed milk is added, followed by a layer of milk foam on top.
+        The foam is often decorated with a sprinkle of cocoa powder or cinnamon.\n
+        Cappuccinos are known for their rich, creamy texture and bold coffee flavor.
+        They are often enjoyed as a breakfast or mid-morning drink, but can be enjoyed anytime throughout
+        the day.\n
+        Cappuccinos can be made with a variety of milk types, such as whole, skim, or soy milk, and can
+        also be flavored with syrups or spices for added sweetness or flavor.
+    </string>
 </resources>
