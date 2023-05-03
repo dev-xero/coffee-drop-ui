@@ -23,12 +23,12 @@ import androidx.navigation.compose.rememberNavController
 import architex.labs.coffeedrop.application.navigation.NavGraph
 import architex.labs.coffeedrop.presentation.theme.CoffeeDropTheme
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		installSplashScreen()
+
 		super.onCreate(savedInstanceState)
 		setContent {
 			CoffeeDropTheme {
