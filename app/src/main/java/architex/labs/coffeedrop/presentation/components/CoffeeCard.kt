@@ -84,7 +84,7 @@ fun CoffeeCard(
 					color = Neutrals200
 				)
 				CoffeeCardBottomRow(
-					price = coffee.price,
+					price = coffee.price
 				)
 			}
 		}

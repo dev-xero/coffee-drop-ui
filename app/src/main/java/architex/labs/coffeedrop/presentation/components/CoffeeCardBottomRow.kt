@@ -55,7 +55,7 @@ fun CoffeeCardBottomRow(
 				color = Primary
 			)
 			Text(
-				text = price.toString(),
+				text = stringResource(id = R.string.price, price),
 				style = MaterialTheme.typography.bodyLarge,
 				color = Neutrals100
 			)
