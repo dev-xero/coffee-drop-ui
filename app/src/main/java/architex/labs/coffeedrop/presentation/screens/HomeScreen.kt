@@ -18,16 +18,21 @@ package architex.labs.coffeedrop.presentation.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
@@ -98,6 +103,29 @@ fun HomeScreen(
 							item {
 								CoffeeCard(coffee = coffee)
 							}
+						}
+					}
+				}
+
+				if (viewModel.filteredCoffeeList.isEmpty()) {
+					item {
+						Column(
+							verticalArrangement = Arrangement.spacedBy(12.dp),
+							horizontalAlignment = Alignment.CenterHorizontally,
+							modifier = Modifier
+								.fillMaxWidth()
+								.padding(horizontal = 12.dp, vertical = 32.dp)
+						) {
+							Icon(
+								painter = painterResource(id = R.drawable.icon_search_filter),
+								contentDescription = stringResource(id = R.string.description_no_matches),
+								modifier = Modifier.size(80.dp)
+							)
+							Text(
+								text = stringResource(id = R.string.no_matching_results),
+								style = MaterialTheme.typography.bodyLarge,
+								color = Neutrals200
+							)
 						}
 					}
 				}
