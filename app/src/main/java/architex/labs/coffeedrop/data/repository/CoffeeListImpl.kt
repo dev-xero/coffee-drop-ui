@@ -96,7 +96,7 @@ class CoffeeListImpl : CoffeeList {
 				name = R.string.latte,
 				description = R.string.latte_description,
 				variant = "With Almond Milk",
-				coffeeType = CoffeeType.Cortado,
+				coffeeType = CoffeeType.Latte,
 				price = 4.20,
 				rating = 4.6,
 				reviews = 24708,
