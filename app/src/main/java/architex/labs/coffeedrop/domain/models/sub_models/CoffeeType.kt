@@ -20,7 +20,6 @@ sealed class CoffeeType(val type: String) {
 	object Latte: CoffeeType("Latte")
 	object Espresso: CoffeeType("Espresso")
 	object DoubleEspresso: CoffeeType("Double Espresso")
-	object Macho: CoffeeType("Macho")
 	object Mocha: CoffeeType("Mocha")
 	object Cortado: CoffeeType("Cortado")
 }

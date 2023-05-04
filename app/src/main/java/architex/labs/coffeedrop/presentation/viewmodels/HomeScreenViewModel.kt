@@ -26,7 +26,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor (
-	val coffeeList: CoffeeList
+	private val coffeeList: CoffeeList
 ): ViewModel() {
 	var searchString: String by mutableStateOf("")
 	var selectedCoffeeType: CoffeeType by mutableStateOf(CoffeeType.Cappuccino)
@@ -36,16 +36,35 @@ class HomeScreenViewModel @Inject constructor (
 		CoffeeType.Espresso,
 		CoffeeType.DoubleEspresso,
 		CoffeeType.Latte,
-		CoffeeType.Mocha,
-		CoffeeType.Macho
+		CoffeeType.Mocha
 	)
+	var filteredCoffeeList by mutableStateOf(
+		coffeeList.coffeeList.filter {
+			it.coffeeType.type == selectedCoffeeType.type
+		}
+	)
+
+	private fun filterCoffeeList() {
+		filteredCoffeeList = if (searchString.isNotBlank()) {
+			coffeeList.coffeeList.filter {
+				it.coffeeType.type == selectedCoffeeType.type &&
+					it.variant.lowercase().contains(searchString.lowercase())
+			}
+		} else {
+			coffeeList.coffeeList.filter {
+				it.coffeeType.type == selectedCoffeeType.type
+			}
+		}
+	}
 
 	fun updateSearchString(newString: String) {
 		searchString = newString
+		filterCoffeeList()
 	}
 
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
 		selectedCoffeeType = newCoffeeType
+		filterCoffeeList()
 	}
 
 }
