@@ -28,8 +28,13 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusManager
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -41,6 +46,7 @@ import architex.labs.coffeedrop.presentation.theme.Neutrals100
 import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals300
 import architex.labs.coffeedrop.presentation.theme.Primary
+import architex.labs.coffeedrop.presentation.utils.clickableNoRipple
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -50,6 +56,8 @@ fun SearchBar(
 	searchValue: String,
 	onSearchValueChange: (String) -> Unit
 ) {
+	var isFocused by remember { mutableStateOf(false) }
+
 	OutlinedTextField(
 		value = searchValue, 
 		onValueChange = onSearchValueChange,
@@ -58,7 +66,8 @@ fun SearchBar(
 		shape = RoundedCornerShape(16.dp),
 		modifier = modifier
 			.fillMaxWidth()
-			.padding(16.dp),
+			.padding(16.dp)
+			.onFocusChanged { isFocused = it.isFocused },
 		placeholder = {
 			Text(
 				text = stringResource(id = R.string.search_bar_placeholder),
@@ -73,6 +82,19 @@ fun SearchBar(
 				contentDescription = stringResource(id = R.string.description_search),
 				modifier = Modifier.size(24.dp)
 			)
+		},
+		trailingIcon = {
+			if (isFocused && searchValue.isNotEmpty()) {
+				Icon(
+					painter = painterResource(id = R.drawable.icon_clear),
+					contentDescription = stringResource(id = R.string.description_clear),
+					modifier = Modifier
+						.size(24.dp)
+						.clickableNoRipple(
+							onClick = { /*TODO*/ }
+						)
+				)
+			}
 		},
 		colors = TextFieldDefaults.outlinedTextFieldColors(
 			containerColor = Neutrals300,
