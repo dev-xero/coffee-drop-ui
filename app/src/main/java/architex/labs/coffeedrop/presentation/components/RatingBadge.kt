@@ -15,73 +15,62 @@
  */
 package architex.labs.coffeedrop.presentation.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import architex.labs.coffeedrop.domain.models.Coffee
-import architex.labs.coffeedrop.presentation.theme.Neutrals100
-import architex.labs.coffeedrop.presentation.theme.Neutrals200
-import architex.labs.coffeedrop.presentation.theme.Neutrals300
+import androidx.compose.ui.zIndex
+import architex.labs.coffeedrop.R
+import architex.labs.coffeedrop.presentation.theme.Neutrals400Transparent
+import architex.labs.coffeedrop.presentation.theme.Primary
 
 @Composable
-fun CoffeeCard(
+fun RatingBadge(
 	modifier: Modifier = Modifier,
-	coffee: Coffee
+	rating: Double
 ) {
-	Column(
+	Box(
 		modifier = modifier
-			.size(width = 164.dp, height = 250.dp)
-			.clip(RoundedCornerShape(16.dp))
-			.background(Neutrals300)
-			.padding(8.dp)
+			.absoluteOffset(x = 94.dp)
+			.clip(
+				RoundedCornerShape(
+					topEnd = 12.dp,
+					bottomStart = 12.dp,
+				)
+			)
+			.background(Neutrals400Transparent)
+			.zIndex(99f)
 	) {
-		Column(
+		Row(
+			horizontalArrangement = Arrangement.spacedBy(4.dp),
+			verticalAlignment = Alignment.CenterVertically,
 			modifier = Modifier
-				.fillMaxSize(),
-			verticalArrangement = Arrangement.spacedBy(8.dp),
+				.padding(horizontal = 8.dp, vertical = 4.dp)
 		) {
-			Box(
-				modifier = Modifier
-					.size(156.dp)
-					.clip(RoundedCornerShape(12.dp))
-			) {
-				RatingBadge(rating = coffee.rating)
-				Image(
-					painter = painterResource(id = coffee.imageResID),
-					contentDescription = stringResource(id = coffee.name),
-					contentScale = ContentScale.Crop,
-				)
-			}
-
-			Column(
-				verticalArrangement = Arrangement.spacedBy(6.dp)
-			) {
-				Text(
-					text = stringResource(id = coffee.name),
-					style = MaterialTheme.typography.titleMedium,
-					color = Neutrals100
-				)
-				Text(
-					text = coffee.variant,
-					style = MaterialTheme.typography.labelSmall,
-					color = Neutrals200
-				)
-			}
+			Icon(
+				painter = painterResource(id = R.drawable.icon_star),
+				contentDescription = stringResource(id = R.string.description_rating),
+				tint = Primary,
+				modifier = Modifier.size(14.dp)
+			)
+			Text(
+				text = rating.toString(),
+				style = MaterialTheme.typography.titleSmall
+			)
 		}
 	}
 }
