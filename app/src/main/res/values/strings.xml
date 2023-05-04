@@ -26,11 +26,11 @@
     <string name="search_bar_placeholder">Find your coffee…</string>
 
     <string name="cappuccino">Cappuccino</string>
-    <string name="macho">Macho</string>
+    <string name="mocha">Mocha</string>
     <string name="espresso">Espresso</string>
     <string name="double_espresso">Double Espresso</string>
     <string name="cortado">Cortado</string>
-    <string name="mocha">Mocha</string>
+    <string name="latte">Latte</string>
 
     <string name="cappuccino_description">
         Cappuccino is a popular coffee beverage that originated in Italy. It consists of equal
@@ -43,5 +43,64 @@
         the day.\n
         Cappuccinos can be made with a variety of milk types, such as whole, skim, or soy milk, and can
         also be flavored with syrups or spices for added sweetness or flavor.
+    </string>
+
+    <string name="mocha_description">
+        Mocha, also known as a mochaccino, is a type of coffee beverage that combines espresso with chocolate.\n
+        To make a mocha, a shot of espresso is brewed and mixed with chocolate syrup or melted chocolate. Steamed
+        milk is then added, along with a layer of milk foam on top. The drink is often finished with a sprinkle of
+        cocoa powder or shaved chocolate on top.\n
+        Mochas can be made with various types of chocolate, such as dark, milk, or white chocolate, depending on
+        personal preference. They can also be served hot or iced, and with a variety of milk types, such as whole,
+        skim, or soy milk.\n
+        Mochas are known for their rich, chocolatey flavor, and are a popular coffee drink among those with a sweet tooth.
+        They are often enjoyed as a dessert or as an indulgent treat during a coffee break.
+    </string>
+
+    <string name="espresso_description">
+        Espresso is a strong, concentrated coffee beverage that is made by forcing hot water through finely ground coffee beans
+        under high pressure.\n
+        To make espresso, a small amount of finely ground coffee beans is packed into a metal filter basket called a portafilter.
+        The portafilter is then attached to an espresso machine, which uses high pressure to force hot water through the coffee
+        grounds and extract a small, concentrated shot of coffee.\n
+        Espresso is typically served in small, demitasse-sized cups and has a thick, creamy layer of foam on top called crema.
+        The crema is formed during the brewing process and is a result of the high pressure used to extract the coffee.
+        Espresso can be enjoyed on its own, as a shot, or can be used as a base for a variety of coffee beverages, such as cappuccinos,
+        lattes, and macchiatos. It is known for its strong, bold flavor and is a popular choice among coffee lovers who enjoy a more
+        intense coffee experience.
+    </string>
+
+    <string name="double_espresso_description">
+        A double espresso, also known as a doppio, is a coffee beverage made by extracting a double shot of espresso instead of a single shot.\n
+        To make a double espresso, twice the amount of coffee grounds are used and packed into the portafilter, and twice the amount of hot water
+        is forced through the grounds to extract a larger, more concentrated shot of coffee.\n
+        Like a regular espresso, a double espresso is typically served in a small, demitasse-sized cup and has a thick layer of crema on top. However,
+        due to the larger amount of coffee used, a double espresso has a stronger, bolder flavor and a more intense caffeine content than a single shot
+        of espresso.\n
+        Double espressos are often enjoyed by those who prefer a stronger coffee taste or who need an extra jolt of caffeine to start their day. They can
+        be consumed on their own or used as a base for other coffee beverages such as lattes, cappuccinos, and macchiatos.
+    </string>
+
+    <string name="cortado_description">
+        Cortado is a coffee beverage that originated in Spain and is becoming increasingly popular in other parts of the world. It is made by combining equal
+        parts of espresso and steamed milk.\n
+        To make a cortado, a shot of espresso is brewed and poured into a small glass or ceramic cup. Then, steamed milk is added to the espresso, creating a
+        creamy and smooth texture. The ratio of espresso to milk is typically equal, although this can vary based on personal preference.\n
+        Cortados are known for their balance of strong coffee flavor and rich, velvety texture from the steamed milk. They are often served in smaller portions
+        than a latte or cappuccino, making them a perfect option for those who prefer a smaller, less milky coffee beverage.\n
+        The word "cortado" comes from the Spanish word "cortar," which means "to cut." This refers to the way the espresso shot is "cut" with the steamed milk to
+        create the perfect balance of coffee and milk flavor. Cortados are typically served as a morning or mid-day coffee beverage and are enjoyed by those who
+        appreciate a rich and flavorful coffee without too much milk.
+    </string>
+
+    <string name="latte_description">
+        A latte is a popular coffee beverage that is made with espresso and steamed milk. It is typically served in a tall glass or ceramic cup and is known for
+        its smooth and creamy texture.\n
+        To make a latte, a shot of espresso is brewed and poured into the bottom of the cup. Then, steamed milk is added, creating a layer of creamy foam on top.
+        The ratio of milk to espresso can vary, but typically there is more milk than espresso in a latte.\n
+        Lattes can be customized with various flavors, such as vanilla, caramel, or hazelnut, by adding flavored syrups or sauces to the espresso and milk mixture.
+        They can also be topped with whipped cream, cocoa powder, or cinnamon for added flavor and decoration.\n
+        Lattes are often enjoyed as a morning or mid-day coffee beverage and are a popular choice among those who prefer a milder coffee taste. They are also a popular
+        option for those who enjoy a milky coffee beverage with a touch of sweetness.
     </string>
 </resources>
