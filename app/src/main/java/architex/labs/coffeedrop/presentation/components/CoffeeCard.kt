@@ -69,7 +69,7 @@ fun CoffeeCard(
 			}
 
 			Column(
-				verticalArrangement = Arrangement.spacedBy(6.dp)
+				verticalArrangement = Arrangement.spacedBy(4.dp)
 			) {
 				Text(
 					text = stringResource(id = coffee.name),
