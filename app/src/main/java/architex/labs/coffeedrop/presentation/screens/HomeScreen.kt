@@ -75,7 +75,8 @@ fun HomeScreen(
 					SearchBar(
 						focusManager = focusManager,
 						searchValue = viewModel.searchString,
-						onSearchValueChange = { viewModel.updateSearchString(it) }
+						onSearchValueChange = { viewModel.updateSearchString(it) },
+						clearSearchString = { viewModel.clearSearchString() }
 					)
 				}
 

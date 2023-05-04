@@ -54,7 +54,8 @@ fun SearchBar(
 	modifier: Modifier = Modifier,
 	focusManager: FocusManager,
 	searchValue: String,
-	onSearchValueChange: (String) -> Unit
+	onSearchValueChange: (String) -> Unit,
+	clearSearchString: () -> Unit
 ) {
 	var isFocused by remember { mutableStateOf(false) }
 
@@ -91,7 +92,7 @@ fun SearchBar(
 					modifier = Modifier
 						.size(24.dp)
 						.clickableNoRipple(
-							onClick = { /*TODO*/ }
+							onClick = clearSearchString
 						)
 				)
 			}
@@ -102,6 +103,7 @@ fun SearchBar(
 			unfocusedLeadingIconColor = Neutrals100,
 			focusedBorderColor = Neutrals300,
 			unfocusedBorderColor = Neutrals300,
+			focusedTrailingIconColor = Neutrals200,
 			textColor = Neutrals100
 		),
 		keyboardOptions = KeyboardOptions.Default.copy(
