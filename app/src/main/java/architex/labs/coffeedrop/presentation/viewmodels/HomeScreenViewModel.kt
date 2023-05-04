@@ -48,6 +48,16 @@ class HomeScreenViewModel @Inject constructor (
 
 	fun updateSearchString(newString: String) {
 		searchString = newString
+		filteredCoffeeList = if (searchString.isNotBlank()) {
+			coffeeList.coffeeList.filter {
+				it.coffeeType.type == selectedCoffeeType.type &&
+					it.variant.lowercase().contains(searchString.lowercase())
+			}
+		} else {
+			coffeeList.coffeeList.filter {
+				it.coffeeType.type == selectedCoffeeType.type
+			}
+		}
 	}
 
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
