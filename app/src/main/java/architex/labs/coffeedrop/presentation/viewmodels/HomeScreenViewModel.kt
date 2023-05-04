@@ -15,7 +15,6 @@
  */
 package architex.labs.coffeedrop.presentation.viewmodels
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -45,8 +44,7 @@ class HomeScreenViewModel @Inject constructor (
 		}
 	)
 
-	fun updateSearchString(newString: String) {
-		searchString = newString
+	private fun filterCoffeeList() {
 		filteredCoffeeList = if (searchString.isNotBlank()) {
 			coffeeList.coffeeList.filter {
 				it.coffeeType.type == selectedCoffeeType.type &&
@@ -59,12 +57,14 @@ class HomeScreenViewModel @Inject constructor (
 		}
 	}
 
+	fun updateSearchString(newString: String) {
+		searchString = newString
+		filterCoffeeList()
+	}
+
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
 		selectedCoffeeType = newCoffeeType
-		filteredCoffeeList = coffeeList.coffeeList.filter {
-			it.coffeeType.type == selectedCoffeeType.type
-		}
-		Log.d("DEBUG_COFFEE", filteredCoffeeList.toString())
+		filterCoffeeList()
 	}
 
 }

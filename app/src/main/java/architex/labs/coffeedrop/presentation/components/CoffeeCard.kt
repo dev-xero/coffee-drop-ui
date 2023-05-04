@@ -66,7 +66,7 @@ fun CoffeeCard(
 				Image(
 					painter = painterResource(id = coffee.imageResID),
 					contentDescription = stringResource(id = coffee.name),
-					contentScale = ContentScale.Crop,
+					contentScale = ContentScale.Crop
 				)
 			}
 
