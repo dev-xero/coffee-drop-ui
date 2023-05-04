@@ -19,7 +19,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -45,7 +44,6 @@ fun RatingBadge(
 ) {
 	Box(
 		modifier = modifier
-			.absoluteOffset(x = 94.dp)
 			.clip(
 				RoundedCornerShape(
 					topEnd = 12.dp,
