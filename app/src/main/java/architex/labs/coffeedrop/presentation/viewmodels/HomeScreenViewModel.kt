@@ -37,8 +37,7 @@ class HomeScreenViewModel @Inject constructor (
 		CoffeeType.Espresso,
 		CoffeeType.DoubleEspresso,
 		CoffeeType.Latte,
-		CoffeeType.Mocha,
-		CoffeeType.Macho
+		CoffeeType.Mocha
 	)
 	var filteredCoffeeList by mutableStateOf(
 		coffeeList.coffeeList.filter {
