@@ -46,7 +46,7 @@ fun CoffeeCard(
 ) {
 	Column(
 		modifier = modifier
-			.size(width = 164.dp, height = 250.dp)
+			.size(width = 164.dp, height = 260.dp)
 			.clip(RoundedCornerShape(16.dp))
 			.background(Neutrals300)
 			.padding(8.dp)
@@ -71,7 +71,7 @@ fun CoffeeCard(
 			}
 
 			Column(
-				verticalArrangement = Arrangement.spacedBy(4.dp)
+				verticalArrangement = Arrangement.spacedBy(6.dp)
 			) {
 				Text(
 					text = stringResource(id = coffee.name),
@@ -82,6 +82,9 @@ fun CoffeeCard(
 					text = coffee.variant,
 					style = MaterialTheme.typography.labelSmall,
 					color = Neutrals200
+				)
+				CoffeeCardBottomRow(
+					price = coffee.price,
 				)
 			}
 		}
