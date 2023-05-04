@@ -15,6 +15,7 @@
  */
 package architex.labs.coffeedrop.presentation.viewmodels
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -26,7 +27,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor (
-	val coffeeList: CoffeeList
+	private val coffeeList: CoffeeList
 ): ViewModel() {
 	var searchString: String by mutableStateOf("")
 	var selectedCoffeeType: CoffeeType by mutableStateOf(CoffeeType.Cappuccino)
@@ -39,6 +40,11 @@ class HomeScreenViewModel @Inject constructor (
 		CoffeeType.Mocha,
 		CoffeeType.Macho
 	)
+	var filteredCoffeeList by mutableStateOf(
+		coffeeList.coffeeList.filter {
+			it.coffeeType.type == selectedCoffeeType.type
+		}
+	)
 
 	fun updateSearchString(newString: String) {
 		searchString = newString
@@ -46,6 +52,10 @@ class HomeScreenViewModel @Inject constructor (
 
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
 		selectedCoffeeType = newCoffeeType
+		filteredCoffeeList = coffeeList.coffeeList.filter {
+			it.coffeeType.type == selectedCoffeeType.type
+		}
+		Log.d("DEBUG_COFFEE", filteredCoffeeList.toString())
 	}
 
 }

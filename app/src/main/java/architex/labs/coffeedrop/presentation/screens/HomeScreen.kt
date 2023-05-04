@@ -16,6 +16,7 @@
 package architex.labs.coffeedrop.presentation.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -88,9 +89,10 @@ fun HomeScreen(
 
 				item {
 					LazyRow(
-						modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp)
+						modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp),
+						horizontalArrangement = Arrangement.spacedBy(12.dp)
 					) {
-						for (coffee in viewModel.coffeeList.coffeeList) {
+						for (coffee in viewModel.filteredCoffeeList) {
 							item {
 								CoffeeCard(coffee = coffee)
 							}

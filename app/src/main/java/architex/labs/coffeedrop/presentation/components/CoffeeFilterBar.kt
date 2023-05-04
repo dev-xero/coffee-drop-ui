@@ -36,7 +36,7 @@ fun CoffeeFilterBar(
 			for (filterOption in filterOptions) {
 				CoffeeFilterOption(
 					filterOption = filterOption,
-					isActiveOption = filterOption == activeOption,
+					isActiveOption = filterOption.type == activeOption.type,
 					updateSelectedCoffeeType = { updateSelectedCoffeeType(filterOption) }
 				)
 			}

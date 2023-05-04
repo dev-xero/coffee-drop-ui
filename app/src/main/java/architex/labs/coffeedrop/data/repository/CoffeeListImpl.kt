@@ -37,6 +37,19 @@ class CoffeeListImpl : CoffeeList {
 				reviews = 18048,
 				roastingLevel = RoastingLevel.MediumRoasted,
 				coffeeSize = listOf(CoffeeSize.Small, CoffeeSize.Medium, CoffeeSize.Large)
+			),
+
+			Coffee(
+				imageResID = R.drawable.image_2,
+				name = R.string.espresso,
+				description = R.string.cappuccino_description,
+				variant = "With Chocolate",
+				coffeeType = CoffeeType.Espresso,
+				price = 4.40,
+				rating = 4.4,
+				reviews = 16200,
+				roastingLevel = RoastingLevel.HighRoasted,
+				coffeeSize = listOf(CoffeeSize.Small, CoffeeSize.Medium, CoffeeSize.Large)
 			)
 		)
 }

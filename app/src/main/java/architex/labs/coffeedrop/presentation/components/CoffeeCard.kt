@@ -81,10 +81,10 @@ fun CoffeeCard(
 						.zIndex(99f)
 				) {
 					Row(
-						horizontalArrangement = Arrangement.spacedBy(6.dp),
+						horizontalArrangement = Arrangement.spacedBy(4.dp),
 						verticalAlignment = Alignment.CenterVertically,
 						modifier = Modifier
-							.padding(horizontal = 12.dp, vertical = 4.dp)
+							.padding(horizontal = 8.dp, vertical = 4.dp)
 					) {
 						Icon(
 							painter = painterResource(id = R.drawable.icon_star),
