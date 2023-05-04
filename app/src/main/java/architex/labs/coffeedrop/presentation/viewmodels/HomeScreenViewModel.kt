@@ -62,6 +62,11 @@ class HomeScreenViewModel @Inject constructor (
 		filterCoffeeList()
 	}
 
+	fun clearSearchString() {
+		searchString = ""
+		filterCoffeeList()
+	}
+
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
 		selectedCoffeeType = newCoffeeType
 		filterCoffeeList()

@@ -35,6 +35,7 @@ import architex.labs.coffeedrop.presentation.components.AppBar
 import architex.labs.coffeedrop.presentation.components.CoffeeCard
 import architex.labs.coffeedrop.presentation.components.CoffeeFilterBar
 import architex.labs.coffeedrop.presentation.components.SearchBar
+import architex.labs.coffeedrop.presentation.components.SpecialForYouCard
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
 import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
@@ -74,7 +75,8 @@ fun HomeScreen(
 					SearchBar(
 						focusManager = focusManager,
 						searchValue = viewModel.searchString,
-						onSearchValueChange = { viewModel.updateSearchString(it) }
+						onSearchValueChange = { viewModel.updateSearchString(it) },
+						clearSearchString = { viewModel.clearSearchString() }
 					)
 				}
 
@@ -97,6 +99,24 @@ fun HomeScreen(
 								CoffeeCard(coffee = coffee)
 							}
 						}
+					}
+				}
+
+				item {
+					Column(
+						modifier = Modifier.padding(
+							top = 12.dp,
+							start = 12.dp,
+							end = 12.dp
+						),
+						verticalArrangement = Arrangement.spacedBy(16.dp)
+					) {
+						Text(
+							text = stringResource(id = R.string.special_for_you),
+							style = MaterialTheme.typography.displayMedium,
+							color = Neutrals100
+						)
+						SpecialForYouCard(imageResID = R.drawable.image_17)
 					}
 				}
 			}

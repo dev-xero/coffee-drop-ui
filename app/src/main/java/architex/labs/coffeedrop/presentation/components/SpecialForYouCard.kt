@@ -18,73 +18,64 @@ package architex.labs.coffeedrop.presentation.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import architex.labs.coffeedrop.domain.models.Coffee
+import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
 import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals300
 
 @Composable
-fun CoffeeCard(
+fun SpecialForYouCard(
 	modifier: Modifier = Modifier,
-	coffee: Coffee
+	imageResID: Int
 ) {
-	Column(
+	Row(
 		modifier = modifier
-			.size(width = 164.dp, height = 260.dp)
+			.fillMaxWidth()
 			.clip(RoundedCornerShape(16.dp))
 			.background(Neutrals300)
-			.padding(8.dp)
 	) {
-		Column(
+		Row(
 			modifier = Modifier
-				.fillMaxSize(),
-			verticalArrangement = Arrangement.spacedBy(8.dp),
+				.fillMaxWidth()
+				.padding(12.dp),
+			horizontalArrangement = Arrangement.spacedBy(12.dp)
 		) {
-			Box(
+			Image(
+				painter = painterResource(id = imageResID),
+				contentDescription = stringResource(id = R.string.description_for_you_image),
+				contentScale = ContentScale.Crop,
 				modifier = Modifier
-					.size(156.dp)
-					.clip(RoundedCornerShape(12.dp)),
-				contentAlignment = Alignment.TopEnd
-			) {
-				RatingBadge(rating = coffee.rating)
-				Image(
-					painter = painterResource(id = coffee.imageResID),
-					contentDescription = stringResource(id = coffee.name),
-					contentScale = ContentScale.Crop
-				)
-			}
+					.size(96.dp)
+					.clip(RoundedCornerShape(12.dp))
+			)
 
 			Column(
-				verticalArrangement = Arrangement.spacedBy(4.dp)
+				verticalArrangement = Arrangement.spacedBy(6.dp)
 			) {
 				Text(
-					text = stringResource(id = coffee.name),
-					style = MaterialTheme.typography.titleMedium,
+					text = stringResource(id = R.string.five_coffee_beans_to_try),
+					style = MaterialTheme.typography.bodyLarge,
 					color = Neutrals100
 				)
 				Text(
-					text = coffee.variant,
-					style = MaterialTheme.typography.labelSmall,
+					text = stringResource(id = R.string.special_for_you_headline),
+					style = MaterialTheme.typography.bodyMedium,
 					color = Neutrals200
-				)
-				CoffeeCardBottomRow(
-					price = coffee.price
 				)
 			}
 		}
