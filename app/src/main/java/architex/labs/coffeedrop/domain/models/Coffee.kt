@@ -15,14 +15,16 @@
  */
 package architex.labs.coffeedrop.domain.models
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
 
 data class Coffee(
-	val imageResID: Int,
-	val name: Int,
-	val description: Int,
+	@DrawableRes val imageResID: Int,
+	@StringRes val name: Int,
+	@StringRes val description: Int,
 	val variant: String,
 	val coffeeType: CoffeeType,
 	val price: Double,
