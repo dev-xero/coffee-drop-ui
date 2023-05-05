@@ -13,23 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.domain.models
+package architex.labs.coffeedrop.presentation.utils
 
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
-import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
-import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
 
-data class Coffee(
-	@DrawableRes val imageResID: Int,
-	@StringRes val name: Int,
-	@StringRes val description: Int,
-	val variant: String,
-	val coffeeType: CoffeeType,
-	val price: Double,
-	val rating: Double,
-	val reviews: Int,
-	val roastingLevel: RoastingLevel,
-	val coffeeSize: List<CoffeeSize>
+data class BottomNavItem(
+	@DrawableRes val selectedIcon: Int,
+	@DrawableRes val unselectedIcon: Int,
+	val route: String
 )
