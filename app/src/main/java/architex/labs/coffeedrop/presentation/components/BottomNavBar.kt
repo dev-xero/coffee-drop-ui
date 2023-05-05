@@ -30,18 +30,20 @@ import architex.labs.coffeedrop.presentation.theme.Primary
 
 @Composable
 fun BottomNavBar(
-	modifier: Modifier = Modifier
+	modifier: Modifier = Modifier,
+	currentScreen: String,
+	changeCurrentScreen: (String) -> Unit
 ) {
 	NavigationBar(
 		modifier = modifier.fillMaxWidth(),
 		containerColor = Neutrals400Transparent
 	) {
 		bottomNavItemList.forEach { navItem ->
-			val isSelected = navItem.route == "Home"
+			val isSelected = navItem.route == currentScreen
 
 			NavigationBarItem(
 				selected = isSelected,
-				onClick = { /*TODO*/ },
+				onClick = { changeCurrentScreen(navItem.route) },
 				icon = {
 					Icon(
 						painter = if (isSelected)

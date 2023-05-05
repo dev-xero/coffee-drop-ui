@@ -29,6 +29,7 @@ class HomeScreenViewModel @Inject constructor (
 	private val coffeeList: CoffeeList
 ): ViewModel() {
 	var searchString: String by mutableStateOf("")
+	var currentScreen by mutableStateOf("Home")
 	var selectedCoffeeType: CoffeeType by mutableStateOf(CoffeeType.Cappuccino)
 	val coffeeTypeList: List<CoffeeType> = listOf(
 		CoffeeType.Cappuccino,
@@ -70,6 +71,10 @@ class HomeScreenViewModel @Inject constructor (
 	fun updateSelectedCoffeeType(newCoffeeType: CoffeeType) {
 		selectedCoffeeType = newCoffeeType
 		filterCoffeeList()
+	}
+
+	fun changeCurrentScreen(newScreen: String) {
+		currentScreen = newScreen
 	}
 
 }
