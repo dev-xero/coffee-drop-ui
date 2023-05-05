@@ -37,6 +37,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.AppBar
+import architex.labs.coffeedrop.presentation.components.BottomNavBar
 import architex.labs.coffeedrop.presentation.components.CoffeeCard
 import architex.labs.coffeedrop.presentation.components.CoffeeFilterBar
 import architex.labs.coffeedrop.presentation.components.SearchBar
@@ -58,6 +59,9 @@ fun HomeScreen(
 		modifier = modifier.background(Neutrals400),
 		topBar = {
 			AppBar(modifier = Modifier.padding(16.dp))
+		},
+		bottomBar = {
+			BottomNavBar()
 		},
 		content = { contentPadding ->
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
