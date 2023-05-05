@@ -25,6 +25,7 @@
     <string name="description_rating">Rating</string>
     <string name="description_add_button">Add Button</string>
     <string name="description_for_you_image">For You Image</string>
+    <string name="description_no_matches">No Matches</string>
 
     <string name="headline_1">Find the best</string>
     <string name="headline_2">coffee for you</string>
@@ -32,6 +33,7 @@
     <string name="special_for_you">Special For You</string>
     <string name="five_coffee_beans_to_try">Five Coffee Beans You Have to Try</string>
     <string name="special_for_you_headline">The best that\'ll make you rediscover caffeine wonder</string>
+    <string name="no_matching_results">No Coffee Matching this Filter</string>
 
     <string name="cappuccino">Cappuccino</string>
     <string name="mocha">Mocha</string>
