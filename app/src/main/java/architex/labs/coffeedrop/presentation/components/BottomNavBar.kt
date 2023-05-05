@@ -44,7 +44,10 @@ fun BottomNavBar(
 				onClick = { /*TODO*/ },
 				icon = {
 					Icon(
-						painter = painterResource(id = navItem.icon),
+						painter = if (isSelected)
+							painterResource(id = navItem.selectedIcon)
+						else
+							painterResource(id = navItem.unselectedIcon),
 						contentDescription = navItem.route
 					)
 				},

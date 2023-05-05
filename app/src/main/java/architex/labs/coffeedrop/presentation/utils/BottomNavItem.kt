@@ -18,6 +18,7 @@ package architex.labs.coffeedrop.presentation.utils
 import androidx.annotation.DrawableRes
 
 data class BottomNavItem(
-	@DrawableRes val icon: Int,
+	@DrawableRes val selectedIcon: Int,
+	@DrawableRes val unselectedIcon: Int,
 	val route: String
 )

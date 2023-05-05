@@ -20,22 +20,26 @@ import architex.labs.coffeedrop.presentation.utils.BottomNavItem
 
 val bottomNavItemList: MutableList<BottomNavItem> = mutableListOf(
 	BottomNavItem(
-		icon = R.drawable.icon_home_filled,
+		selectedIcon = R.drawable.icon_home_filled,
+		unselectedIcon = R.drawable.icon_home_outline,
 		route = "Home"
 	),
 
 	BottomNavItem(
-		icon = R.drawable.icon_shopping_bag_outline,
+		selectedIcon = R.drawable.icon_shopping_bag_filled,
+		unselectedIcon = R.drawable.icon_shopping_bag_outline,
 		route = "Cart"
 	),
 
 	BottomNavItem(
-		icon = R.drawable.icon_heart_outline,
+		selectedIcon = R.drawable.icon_heart_filled,
+		unselectedIcon = R.drawable.icon_heart_outline,
 		route = "Favorites"
 	),
 
 	BottomNavItem(
-		icon = R.drawable.icon_notification_outline,
+		selectedIcon = R.drawable.icon_notification_filled,
+		unselectedIcon = R.drawable.icon_notification_outline,
 		route = "Notification"
 	)
 )
