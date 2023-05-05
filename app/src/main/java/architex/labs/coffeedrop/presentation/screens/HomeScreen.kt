@@ -61,7 +61,10 @@ fun HomeScreen(
 			AppBar(modifier = Modifier.padding(16.dp))
 		},
 		bottomBar = {
-			BottomNavBar()
+			BottomNavBar(
+				currentScreen = viewModel.currentScreen,
+				changeCurrentScreen = { viewModel.changeCurrentScreen(it) }
+			)
 		},
 		content = { contentPadding ->
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
