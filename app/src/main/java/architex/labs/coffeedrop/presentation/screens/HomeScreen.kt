@@ -15,6 +15,8 @@
  */
 package architex.labs.coffeedrop.presentation.screens
 
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -48,7 +50,7 @@ import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
 import architex.labs.coffeedrop.presentation.viewmodels.HomeScreenViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
 	modifier: Modifier = Modifier,
@@ -104,7 +106,9 @@ fun HomeScreen(
 
 				item {
 					LazyRow(
-						modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp),
+						modifier = Modifier
+							.padding(horizontal = 12.dp, vertical = 12.dp)
+							.animateItemPlacement(tween(durationMillis = 250)),
 						horizontalArrangement = Arrangement.spacedBy(12.dp)
 					) {
 						items(viewModel.filteredCoffeeList, key = { it.id }) { coffee ->
