@@ -21,12 +21,14 @@ import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
 import architex.labs.coffeedrop.domain.repository.CoffeeList
+import java.util.UUID
 
 class CoffeeListImpl : CoffeeList {
 
 	override val coffeeList: List<Coffee>
 		get() = listOf(
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_1,
 				name = R.string.cappuccino,
 				description = R.string.cappuccino_description,
@@ -40,6 +42,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_2,
 				name = R.string.espresso,
 				description = R.string.espresso_description,
@@ -53,6 +56,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_3,
 				name = R.string.cappuccino,
 				description = R.string.cappuccino_description,
@@ -66,6 +70,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_4,
 				name = R.string.mocha,
 				description = R.string.mocha_description,
@@ -79,6 +84,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_5,
 				name = R.string.cortado,
 				description = R.string.cortado_description,
@@ -92,6 +98,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_6,
 				name = R.string.latte,
 				description = R.string.latte_description,
@@ -105,6 +112,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_7,
 				name = R.string.cappuccino,
 				description = R.string.cappuccino_description,
@@ -118,6 +126,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_8,
 				name = R.string.double_espresso,
 				description = R.string.double_espresso_description,
@@ -131,6 +140,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_9,
 				name = R.string.espresso,
 				description = R.string.espresso_description,
@@ -144,6 +154,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_10,
 				name = R.string.cortado,
 				description = R.string.cortado_description,
@@ -157,6 +168,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_11,
 				name = R.string.cortado,
 				description = R.string.cortado_description,
@@ -170,6 +182,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_12,
 				name = R.string.latte,
 				description = R.string.latte_description,
@@ -183,6 +196,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_13,
 				name = R.string.cappuccino,
 				description = R.string.cappuccino_description,
@@ -196,6 +210,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_14,
 				name = R.string.espresso,
 				description = R.string.espresso_description,
@@ -209,6 +224,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_15,
 				name = R.string.latte,
 				description = R.string.latte_description,
@@ -222,6 +238,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_16,
 				name = R.string.mocha,
 				description = R.string.mocha_description,
@@ -235,6 +252,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_17,
 				name = R.string.cortado,
 				description = R.string.cortado_description,
@@ -248,6 +266,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_18,
 				name = R.string.double_espresso,
 				description = R.string.double_espresso_description,
@@ -261,6 +280,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_19,
 				name = R.string.double_espresso,
 				description = R.string.double_espresso_description,
@@ -274,6 +294,7 @@ class CoffeeListImpl : CoffeeList {
 			),
 
 			Coffee(
+				id = UUID.randomUUID(),
 				imageResID = R.drawable.image_20,
 				name = R.string.mocha,
 				description = R.string.mocha_description,
