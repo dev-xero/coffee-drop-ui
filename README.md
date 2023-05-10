@@ -1,8 +1,8 @@
 ![Banner](https://user-images.githubusercontent.com/70282966/235357222-ad354802-011c-4981-81b1-e1f7230bac74.svg)
-# Coffee Drop
-Coffee App UI Built with Kotlin and Jetpack Compose. The app's design is inspired by this coffee app concept design I found on [dribbble](https://dribbble.com/shots/15475209-Coffee-Shop-Mobile-Apps-Dark-Mode)
+<h1>Coffee Drop</h1>
+Coffee App UI Built with Kotlin and Jetpack Compose. The design is inspired by this concept on <a href="https://dribbble.com/shots/15475209-Coffee-Shop-Mobile-Apps-Dark-Mode">dribbble</a>. It's based on the Clean Architecture (or at least my implementation of it). Not a fully-functional app, more of a UI practice app.
 
-## App Screenshots
+## Screenshots
 <p>
   <img width="240" alt="Display_Home" src="https://user-images.githubusercontent.com/70282966/236580636-df972f19-f72b-4e94-b98d-e69a1708e8ab.png">
   <img width="240" alt="Display_Searching" src="https://user-images.githubusercontent.com/70282966/236580716-f3ba1f73-34ed-4516-873a-61df8ebe11bc.png">
