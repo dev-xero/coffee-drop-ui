@@ -42,7 +42,8 @@ import architex.labs.coffeedrop.presentation.theme.Neutrals300
 @Composable
 fun CoffeeCard(
 	modifier: Modifier = Modifier,
-	coffee: Coffee
+	coffee: Coffee,
+	onCoffeeDetailsButtonClicked: (id: Int) -> Unit
 ) {
 	Column(
 		modifier = modifier
@@ -84,7 +85,8 @@ fun CoffeeCard(
 					color = Neutrals200
 				)
 				CoffeeCardBottomRow(
-					price = coffee.price
+					price = coffee.price,
+					onDetailsButtonClick = { onCoffeeDetailsButtonClicked(coffee.id) }
 				)
 			}
 		}

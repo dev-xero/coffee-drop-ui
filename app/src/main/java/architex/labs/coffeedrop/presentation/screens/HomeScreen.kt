@@ -54,7 +54,8 @@ import architex.labs.coffeedrop.presentation.viewmodels.HomeScreenViewModel
 @Composable
 fun HomeScreen(
 	modifier: Modifier = Modifier,
-	viewModel: HomeScreenViewModel
+	viewModel: HomeScreenViewModel,
+	onCoffeeDetailScreenClicked: () -> Unit
 ) {
 	val focusManager = LocalFocusManager.current
 
@@ -112,7 +113,13 @@ fun HomeScreen(
 						horizontalArrangement = Arrangement.spacedBy(12.dp)
 					) {
 						items(viewModel.filteredCoffeeList, key = { it.id }) { coffee ->
-							CoffeeCard(coffee = coffee)
+							CoffeeCard(
+								coffee = coffee,
+								onCoffeeDetailsButtonClicked = {
+									viewModel.setSelectedCoffee(it)
+									onCoffeeDetailScreenClicked()
+								}
+							)
 						}
 					}
 				}

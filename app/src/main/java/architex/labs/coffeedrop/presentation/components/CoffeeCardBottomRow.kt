@@ -39,7 +39,8 @@ import architex.labs.coffeedrop.presentation.theme.Primary
 @Composable
 fun CoffeeCardBottomRow(
 	modifier: Modifier = Modifier,
-	price: Double
+	price: Double,
+	onDetailsButtonClick: () -> Unit,
 ) {
 	Row(
 		modifier = modifier.fillMaxWidth(),
@@ -62,7 +63,7 @@ fun CoffeeCardBottomRow(
 		}
 		
 		IconButton(
-			onClick = { /*TODO*/ },
+			onClick = onDetailsButtonClick,
 			colors = IconButtonDefaults.iconButtonColors(
 				containerColor = Primary,
 				contentColor = Neutrals100
