@@ -22,7 +22,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import architex.labs.coffeedrop.application.navigation.routes.NavRoutes
 import architex.labs.coffeedrop.presentation.screens.HomeScreen
-import architex.labs.coffeedrop.presentation.viewmodels.HomeScreenViewModel
 
 @Composable
 fun NavGraph(
