@@ -30,7 +30,8 @@ import architex.labs.coffeedrop.presentation.viewmodels.CoffeeDetailsScreenViewM
 @Composable
 fun CoffeeDetailsScreen(
 	modifier: Modifier = Modifier,
-	viewModel: CoffeeDetailsScreenViewModel
+	viewModel: CoffeeDetailsScreenViewModel,
+	onBackButtonClicked: () -> Unit
 ) {
 	val selectedCoffee = viewModel.selectedCoffee!!
 
@@ -46,7 +47,8 @@ fun CoffeeDetailsScreen(
 							variant = variant,
 							ratings = rating,
 							reviews = reviews,
-							coffeeType = roastingLevel.roastingLevel
+							coffeeType = roastingLevel.roastingLevel,
+							onBackButtonClicked = onBackButtonClicked
 						)
 					}
 				}

@@ -41,7 +41,8 @@ import architex.labs.coffeedrop.presentation.utils.CustomRippleTheme
 @Composable
 fun CoffeeDetailsTopRow(
 	modifier: Modifier = Modifier,
-	icons: Pair<Int, Int>
+	icons: Pair<Int, Int>,
+	onBackButtonClicked: () -> Unit
 ) {
 	Row(
 		modifier = modifier.fillMaxWidth(),
@@ -50,7 +51,7 @@ fun CoffeeDetailsTopRow(
 	) {
 		CompositionLocalProvider(LocalRippleTheme provides CustomRippleTheme) {
 			IconButton(
-				onClick = { /*TODO*/ },
+				onClick = onBackButtonClicked,
 				colors = IconButtonDefaults.iconButtonColors(
 					containerColor = Neutrals400Transparent,
 					contentColor = Neutrals100

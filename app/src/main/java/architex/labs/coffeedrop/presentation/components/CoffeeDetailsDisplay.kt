@@ -42,7 +42,8 @@ fun CoffeeDetailsDisplay(
 	variant: String,
 	ratings: Double,
 	reviews: Int,
-	coffeeType: String
+	coffeeType: String,
+	onBackButtonClicked: () -> Unit
 ) {
 	Column(
 		modifier = modifier
@@ -60,6 +61,7 @@ fun CoffeeDetailsDisplay(
 			) {
 				CoffeeDetailsTopRow(
 					icons = Pair(R.drawable.icon_arrow_left, R.drawable.icon_heart_filled),
+					onBackButtonClicked = onBackButtonClicked,
 					modifier = Modifier
 						.zIndex(99f)
 						.padding(8.dp)

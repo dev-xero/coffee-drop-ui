@@ -48,7 +48,8 @@ fun NavGraph(
 			viewModel.setCoffeeID(id)
 
 			CoffeeDetailsScreen(
-				viewModel = viewModel
+				viewModel = viewModel,
+				onBackButtonClicked = { navController.popBackStack() }
 			)
 		}
 	}
