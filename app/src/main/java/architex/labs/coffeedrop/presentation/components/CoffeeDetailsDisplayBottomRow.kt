@@ -115,7 +115,7 @@ fun CoffeeDetailsDisplayBottomRow(
 
 			Text(
 				text = coffeeType,
-				style = MaterialTheme.typography.titleMedium,
+				style = MaterialTheme.typography.titleSmall,
 				color = Neutrals100
 			)
 		}
