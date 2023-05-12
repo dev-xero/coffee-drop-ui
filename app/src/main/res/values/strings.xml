@@ -17,6 +17,7 @@
     <string name="app_name">Coffee Drop</string>
     <string name="dollar_sign">\$</string>
     <string name="price">%.2f</string>
+    <string name="reviews">(%s reviews)</string>
 
     <string name="description_menu">Menu Icon</string>
     <string name="description_avatar">Avatar</string>
@@ -26,6 +27,9 @@
     <string name="description_add_button">Add Button</string>
     <string name="description_for_you_image">For You Image</string>
     <string name="description_no_matches">No Matches</string>
+    <string name="description_coffee_image">Coffee Image</string>
+    <string name="description_back_btn">Back</string>
+    <string name="description_heart_btn">Favorite</string>
 
     <string name="headline_1">Find the best</string>
     <string name="headline_2">coffee for you</string>

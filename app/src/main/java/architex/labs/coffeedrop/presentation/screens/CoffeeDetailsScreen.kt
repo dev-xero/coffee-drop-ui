@@ -20,10 +20,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import architex.labs.coffeedrop.presentation.theme.Neutrals100
+import architex.labs.coffeedrop.presentation.components.CoffeeDetailsDisplay
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
 import architex.labs.coffeedrop.presentation.viewmodels.CoffeeDetailsScreenViewModel
 
@@ -33,12 +32,23 @@ fun CoffeeDetailsScreen(
 	modifier: Modifier = Modifier,
 	viewModel: CoffeeDetailsScreenViewModel
 ) {
+	val selectedCoffee = viewModel.selectedCoffee!!
+
 	Scaffold(
 		modifier = modifier.background(Neutrals400),
 		content = {contentPadding ->
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
 				item {
-					Text(text = "coffee details", color = Neutrals100)
+					selectedCoffee.run {
+						CoffeeDetailsDisplay(
+							imageResID = imageResID,
+							titleRedID = name,
+							variant = variant,
+							ratings = rating,
+							reviews = reviews,
+							coffeeType = roastingLevel.roastingLevel
+						)
+					}
 				}
 			}
 		}
