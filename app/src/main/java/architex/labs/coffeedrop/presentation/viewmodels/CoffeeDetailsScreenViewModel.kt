@@ -34,7 +34,7 @@ class CoffeeDetailsScreenViewModel @Inject constructor (
 
 	fun setCoffeeID(id: Int) {
 		selectedCoffeeID = id
-		selectedCoffee = coffeeList.coffeeList.find {
+		selectedCoffee = coffeeList.list.find {
 			it.id == selectedCoffeeID
 		}
 	}

@@ -43,18 +43,18 @@ class HomeScreenViewModel @Inject constructor (
 	)
 
 	var filteredCoffeeList by mutableStateOf(
-		coffeeList.coffeeList.filter {
+		coffeeList.list.filter {
 			it.coffeeType.type == selectedCoffeeType.type
 		}
 	)
 	private fun filterCoffeeList() {
 		filteredCoffeeList = if (searchString.isNotBlank()) {
-			coffeeList.coffeeList.filter {
+			coffeeList.list.filter {
 				it.coffeeType.type == selectedCoffeeType.type &&
 					it.variant.lowercase().contains(searchString.lowercase())
 			}
 		} else {
-			coffeeList.coffeeList.filter {
+			coffeeList.list.filter {
 				it.coffeeType.type == selectedCoffeeType.type
 			}
 		}
@@ -81,7 +81,7 @@ class HomeScreenViewModel @Inject constructor (
 
 	fun setSelectedCoffee(id: Int) {
 		selectedCoffeeID = id
-		Log.d("COFFEE_DEBUG", coffeeList.coffeeList.toString())
+		Log.d("COFFEE_DEBUG", coffeeList.list.toString())
 	}
 
 }

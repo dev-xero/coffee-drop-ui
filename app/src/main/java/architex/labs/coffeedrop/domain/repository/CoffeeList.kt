@@ -18,5 +18,5 @@ package architex.labs.coffeedrop.domain.repository
 import architex.labs.coffeedrop.domain.models.Coffee
 
 interface CoffeeList {
-	val coffeeList: List<Coffee>
+	val list: List<Coffee>
 }

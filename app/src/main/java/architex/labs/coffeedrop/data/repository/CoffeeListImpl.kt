@@ -24,7 +24,7 @@ import architex.labs.coffeedrop.domain.repository.CoffeeList
 
 class CoffeeListImpl : CoffeeList {
 
-	override val coffeeList: List<Coffee>
+	override val list: List<Coffee>
 		get() = listOf(
 			Coffee(
 				id = 0,
