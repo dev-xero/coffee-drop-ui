@@ -15,7 +15,6 @@
  */
 package architex.labs.coffeedrop.presentation.viewmodels
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -29,14 +28,18 @@ import javax.inject.Inject
 class CoffeeDetailsScreenViewModel @Inject constructor (
 	private val coffeeList: CoffeeList
 ): ViewModel() {
-	var selectedCoffeeID: Int? by mutableStateOf(null)
+	private var selectedCoffeeID: Int? by mutableStateOf(null)
 	var selectedCoffee: Coffee? by mutableStateOf(null)
+	var isDescriptionExpanded: Boolean by mutableStateOf(false)
 
 	fun setCoffeeID(id: Int) {
 		selectedCoffeeID = id
-		Log.d("COFFEE_DEBUG", selectedCoffeeID.toString())
 		selectedCoffee = coffeeList.coffeeList.find {
 			it.id == selectedCoffeeID
 		}
+	}
+
+	fun toggleIsDescriptionExpanded() {
+		isDescriptionExpanded = !isDescriptionExpanded
 	}
 }

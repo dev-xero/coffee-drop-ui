@@ -16,14 +16,27 @@
 package architex.labs.coffeedrop.presentation.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.CoffeeDetailsDisplay
+import architex.labs.coffeedrop.presentation.theme.Neutrals100
+import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
+import architex.labs.coffeedrop.presentation.theme.Primary
+import architex.labs.coffeedrop.presentation.utils.clickableNoRipple
 import architex.labs.coffeedrop.presentation.viewmodels.CoffeeDetailsScreenViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,15 +54,52 @@ fun CoffeeDetailsScreen(
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
 				item {
 					selectedCoffee.run {
-						CoffeeDetailsDisplay(
-							imageResID = imageResID,
-							titleRedID = name,
-							variant = variant,
-							ratings = rating,
-							reviews = reviews,
-							coffeeType = roastingLevel.roastingLevel,
-							onBackButtonClicked = onBackButtonClicked
-						)
+						Column(
+							verticalArrangement = Arrangement.spacedBy(16.dp)
+						) {
+							CoffeeDetailsDisplay(
+								imageResID = imageResID,
+								titleRedID = name,
+								variant = variant,
+								ratings = rating,
+								reviews = reviews,
+								coffeeType = roastingLevel.roastingLevel,
+								onBackButtonClicked = onBackButtonClicked
+							)
+
+							Column(
+								verticalArrangement = Arrangement.spacedBy(8.dp),
+								modifier = Modifier.padding(horizontal = 12.dp)
+							) {
+								Text(
+									text = stringResource(id = R.string.description),
+									style = MaterialTheme.typography.displayMedium,
+									color = Neutrals100
+								)
+
+								Column(
+									modifier = Modifier.fillMaxWidth(),
+									verticalArrangement = Arrangement.spacedBy(2.dp)
+								) {
+									Text(
+										text = stringResource(id = description),
+										style = MaterialTheme.typography.bodyMedium,
+										color = Neutrals200,
+										maxLines = if (viewModel.isDescriptionExpanded) 30 else 2,
+										overflow = TextOverflow.Ellipsis
+									)
+									Text(
+										text = if (viewModel.isDescriptionExpanded)
+											stringResource(id = R.string.read_less)
+										else
+											stringResource(id = R.string.read_more),
+										style = MaterialTheme.typography.bodyMedium,
+										color = Primary,
+										modifier = Modifier.clickableNoRipple { viewModel.toggleIsDescriptionExpanded() }
+									)
+								}
+							}
+						}
 					}
 				}
 			}
