@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
+import architex.labs.coffeedrop.presentation.components.CoffeeDetailsBottomRow
 import architex.labs.coffeedrop.presentation.components.CoffeeDetailsDisplay
 import architex.labs.coffeedrop.presentation.components.SizeDisplay
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
@@ -132,6 +133,16 @@ fun CoffeeDetailsScreen(
 												)
 											}
 										}
+									}
+
+									Column(
+										modifier = Modifier.padding(
+											top = 32.dp,
+											start = 12.dp,
+											end = 12.dp
+										)
+									) {
+										CoffeeDetailsBottomRow(price = price)
 									}
 								}
 							}
