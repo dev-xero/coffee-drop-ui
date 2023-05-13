@@ -15,7 +15,6 @@
  */
 package architex.labs.coffeedrop.presentation.screens
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -126,7 +125,7 @@ fun CoffeeDetailsScreen(
 												viewModel.selectedCoffeeSize!!.size == size.size,
 											modifier = Modifier.weight(1f / 3f),
 											count = count+1,
-											setCoffeeSize = { Log.d("COFFEE_DEBUG", size.toString()) }
+											setCoffeeSize = { viewModel.selectCoffeeSize(size) }
 										)
 									}
 								}

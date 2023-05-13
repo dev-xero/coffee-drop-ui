@@ -82,7 +82,9 @@ fun SizeDisplay(
 				}
 			)
 			.background(if (isSelected) Accent else Neutrals300)
-			.clickableNoRipple { setCoffeeSize() }
+			.clickableNoRipple(
+				onClick = setCoffeeSize
+			)
 	) {
 		Text(
 			text = size.size,

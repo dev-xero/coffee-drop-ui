@@ -46,4 +46,7 @@ class CoffeeDetailsScreenViewModel @Inject constructor (
 	}
 
 
+	fun selectCoffeeSize(newSize: CoffeeSize) {
+		selectedCoffeeSize = newSize
+	}
 }
