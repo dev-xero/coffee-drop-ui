@@ -17,67 +17,52 @@ package architex.labs.coffeedrop.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
+import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Primary
+import java.text.NumberFormat
 
 @Composable
-fun CoffeeCardBottomRow(
+fun RatingDetails(
 	modifier: Modifier = Modifier,
-	price: Double,
-	onDetailsButtonClick: () -> Unit,
+	ratings: Double,
+	reviews: Int
 ) {
 	Row(
-		modifier = modifier.fillMaxWidth(),
-		horizontalArrangement = Arrangement.SpaceBetween,
+		horizontalArrangement = Arrangement.spacedBy(8.dp),
 		verticalAlignment = Alignment.CenterVertically
 	) {
-		Row (
-			horizontalArrangement = Arrangement.spacedBy(2.dp)
+		Row(
+			horizontalArrangement = Arrangement.spacedBy(4.dp),
+			verticalAlignment = Alignment.CenterVertically
 		) {
-			Text(
-				text = stringResource(id = R.string.dollar_sign),
-				style = MaterialTheme.typography.bodyLarge,
-				color = Primary
+			Icon(
+				painter = painterResource(id = R.drawable.icon_star),
+				contentDescription = stringResource(id = R.string.description_rating),
+				modifier = modifier.size(14.dp),
+				tint = Primary
 			)
 			Text(
-				text = stringResource(id = R.string.price, price),
-				style = MaterialTheme.typography.bodyLarge,
+				text = ratings.toString(),
+				style = MaterialTheme.typography.titleSmall,
 				color = Neutrals100
 			)
 		}
-		
-		IconButton(
-			onClick = onDetailsButtonClick,
-			colors = IconButtonDefaults.iconButtonColors(
-				containerColor = Primary,
-				contentColor = Neutrals100
-			),
-			modifier = Modifier
-				.clip(RoundedCornerShape(8.dp))
-				.size(32.dp)
-		) {
-			Icon(
-				painter = painterResource(id = R.drawable.icon_plus),
-				contentDescription = stringResource(id = R.string.description_add_button),
-				tint = Neutrals100,
-				modifier = Modifier.size(18.dp)
-			)
-		}
+		Text(
+			text = stringResource(id = R.string.reviews, NumberFormat.getNumberInstance().format(reviews)),
+			style = MaterialTheme.typography.titleSmall,
+			color = Neutrals200
+		)
 	}
 }

@@ -20,10 +20,9 @@ import androidx.annotation.StringRes
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
 import architex.labs.coffeedrop.domain.models.sub_models.CoffeeType
 import architex.labs.coffeedrop.domain.models.sub_models.RoastingLevel
-import java.util.UUID
 
 data class Coffee(
-	val id: UUID,
+	val id: Int,
 	@DrawableRes val imageResID: Int,
 	@StringRes val name: Int,
 	@StringRes val description: Int,

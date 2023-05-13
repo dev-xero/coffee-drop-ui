@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package architex.labs.coffeedrop.application.di
+package architex.labs.coffeedrop.presentation.utils
 
-import architex.labs.coffeedrop.data.repository.CoffeeListImpl
-import architex.labs.coffeedrop.domain.repository.CoffeeList
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material.ripple.RippleTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
-@Module
-@InstallIn(SingletonComponent::class)
-object AppModule {
-
-	@Provides
-	@Singleton
-	fun providesCoffeeList(): CoffeeList {
-		return CoffeeListImpl()
-	}
+object CustomRippleTheme : RippleTheme {
+	@Composable
+	override fun defaultColor(): Color = Color.Unspecified
+	@Composable
+	override fun rippleAlpha(): RippleAlpha = RippleAlpha(
+		draggedAlpha = 0f,
+		focusedAlpha = 0f,
+		hoveredAlpha = 0f,
+		pressedAlpha = 0f
+	)
 }

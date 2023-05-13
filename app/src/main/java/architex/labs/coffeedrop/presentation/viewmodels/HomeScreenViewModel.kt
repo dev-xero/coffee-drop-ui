@@ -28,6 +28,7 @@ import javax.inject.Inject
 class HomeScreenViewModel @Inject constructor (
 	private val coffeeList: CoffeeList
 ): ViewModel() {
+	var selectedCoffeeID: Int? by mutableStateOf(null)
 	var searchString: String by mutableStateOf("")
 	var currentScreen by mutableStateOf("Home")
 	var selectedCoffeeType: CoffeeType by mutableStateOf(CoffeeType.Cappuccino)
@@ -39,20 +40,20 @@ class HomeScreenViewModel @Inject constructor (
 		CoffeeType.Latte,
 		CoffeeType.Mocha
 	)
+
 	var filteredCoffeeList by mutableStateOf(
-		coffeeList.coffeeList.filter {
+		coffeeList.list.filter {
 			it.coffeeType.type == selectedCoffeeType.type
 		}
 	)
-
 	private fun filterCoffeeList() {
 		filteredCoffeeList = if (searchString.isNotBlank()) {
-			coffeeList.coffeeList.filter {
+			coffeeList.list.filter {
 				it.coffeeType.type == selectedCoffeeType.type &&
 					it.variant.lowercase().contains(searchString.lowercase())
 			}
 		} else {
-			coffeeList.coffeeList.filter {
+			coffeeList.list.filter {
 				it.coffeeType.type == selectedCoffeeType.type
 			}
 		}
@@ -75,6 +76,10 @@ class HomeScreenViewModel @Inject constructor (
 
 	fun changeCurrentScreen(newScreen: String) {
 		currentScreen = newScreen
+	}
+
+	fun setSelectedCoffee(id: Int) {
+		selectedCoffeeID = id
 	}
 
 }
