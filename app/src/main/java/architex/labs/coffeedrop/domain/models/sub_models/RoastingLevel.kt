@@ -16,7 +16,7 @@
 package architex.labs.coffeedrop.domain.models.sub_models
 
 sealed class RoastingLevel(val roastingLevel: String) {
-	object LowRoasted: RoastingLevel("LOW ROASTED")
-	object MediumRoasted: RoastingLevel("MEDIUM ROASTED")
-	object HighRoasted: RoastingLevel("HIGH ROASTED")
+	object LowRoasted: RoastingLevel("LOW ROAST")
+	object MediumRoasted: RoastingLevel("MEDIUM ROAST")
+	object HighRoasted: RoastingLevel("HIGH ROAST")
 }
