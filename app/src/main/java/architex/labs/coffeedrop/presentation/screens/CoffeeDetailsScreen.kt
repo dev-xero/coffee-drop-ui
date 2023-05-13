@@ -17,6 +17,7 @@ package architex.labs.coffeedrop.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -55,77 +56,168 @@ fun CoffeeDetailsScreen(
 		content = {contentPadding ->
 			LazyColumn(modifier = Modifier.padding(contentPadding)) {
 				item {
-					selectedCoffee.run {
-						Column(
-							verticalArrangement = Arrangement.spacedBy(16.dp)
-						) {
-							CoffeeDetailsDisplay(
-								imageResID = imageResID,
-								titleRedID = name,
-								variant = variant,
-								ratings = rating,
-								reviews = reviews,
-								coffeeType = roastingLevel.roastingLevel,
-								onBackButtonClicked = onBackButtonClicked
-							)
-
-							Column(
-								verticalArrangement = Arrangement.spacedBy(8.dp),
-								modifier = Modifier.padding(horizontal = 12.dp)
-							) {
-								Text(
-									text = stringResource(id = R.string.description),
-									style = MaterialTheme.typography.displayMedium,
-									color = Neutrals100
-								)
-
+					BoxWithConstraints {
+						if (maxWidth < 600.dp) {
+							selectedCoffee.run {
 								Column(
-									modifier = Modifier.fillMaxWidth(),
-									verticalArrangement = Arrangement.spacedBy(2.dp)
+									verticalArrangement = Arrangement.spacedBy(16.dp)
 								) {
-									Text(
-										text = stringResource(id = description),
-										style = MaterialTheme.typography.bodyMedium,
-										color = Neutrals200,
-										maxLines = if (viewModel.isDescriptionExpanded) 30 else 2,
-										overflow = TextOverflow.Ellipsis
+									CoffeeDetailsDisplay(
+										imageResID = imageResID,
+										titleRedID = name,
+										variant = variant,
+										ratings = rating,
+										reviews = reviews,
+										coffeeType = roastingLevel.roastingLevel,
+										onBackButtonClicked = onBackButtonClicked
 									)
-									Text(
-										text = if (viewModel.isDescriptionExpanded)
-											stringResource(id = R.string.read_less)
-										else
-											stringResource(id = R.string.read_more),
-										style = MaterialTheme.typography.bodyMedium,
-										color = Primary,
-										modifier = Modifier.clickableNoRipple { viewModel.toggleIsDescriptionExpanded() }
-									)
+
+									Column(
+										verticalArrangement = Arrangement.spacedBy(8.dp),
+										modifier = Modifier.padding(horizontal = 12.dp)
+									) {
+										Text(
+											text = stringResource(id = R.string.description),
+											style = MaterialTheme.typography.displayMedium,
+											color = Neutrals100
+										)
+
+										Column(
+											modifier = Modifier.fillMaxWidth(),
+											verticalArrangement = Arrangement.spacedBy(2.dp)
+										) {
+											Text(
+												text = stringResource(id = description),
+												style = MaterialTheme.typography.bodyMedium,
+												color = Neutrals200,
+												maxLines = if (viewModel.isDescriptionExpanded) 30 else 2,
+												overflow = TextOverflow.Ellipsis
+											)
+											Text(
+												text = if (viewModel.isDescriptionExpanded)
+													stringResource(id = R.string.read_less)
+												else
+													stringResource(id = R.string.read_more),
+												style = MaterialTheme.typography.bodyMedium,
+												color = Primary,
+												modifier = Modifier.clickableNoRipple { viewModel.toggleIsDescriptionExpanded() }
+											)
+										}
+									}
+
+									Column(
+										verticalArrangement = Arrangement.spacedBy(12.dp),
+										modifier = Modifier.padding(horizontal = 12.dp)
+									) {
+										Text(
+											text = stringResource(id = R.string.size),
+											style = MaterialTheme.typography.bodyLarge,
+											color = Neutrals200
+										)
+
+										Row(
+											modifier = Modifier.fillMaxWidth(),
+											horizontalArrangement = Arrangement.spacedBy(8.dp)
+										) {
+											for ((count, size) in coffeeSize.withIndex()) {
+												SizeDisplay(
+													size = size,
+													isSelected = if (viewModel.selectedCoffeeSize == null)
+														count == 0
+													else
+														viewModel.selectedCoffeeSize!!.size == size.size,
+													modifier = Modifier.weight(1f / 3f),
+													count = count+1,
+													setCoffeeSize = { viewModel.selectCoffeeSize(size) }
+												)
+											}
+										}
+									}
 								}
 							}
-
-							Column(
-								verticalArrangement = Arrangement.spacedBy(12.dp),
-								modifier = Modifier.padding(horizontal = 12.dp)
-							) {
-								Text(
-									text = stringResource(id = R.string.size),
-									style = MaterialTheme.typography.bodyLarge,
-									color = Neutrals200
-								)
-
+						} else {
+							selectedCoffee.run {
 								Row(
-									modifier = Modifier.fillMaxWidth(),
-									horizontalArrangement = Arrangement.spacedBy(8.dp)
+									horizontalArrangement = Arrangement.spacedBy(16.dp)
 								) {
-									for ((count, size) in coffeeSize.withIndex()) {
-										SizeDisplay(
-											size = size,
-											isSelected = if (viewModel.selectedCoffeeSize == null)
-												count == 0
-											else
-												viewModel.selectedCoffeeSize!!.size == size.size,
-											modifier = Modifier.weight(1f / 3f),
-											count = count+1,
-											setCoffeeSize = { viewModel.selectCoffeeSize(size) }
+									Column(
+										modifier = Modifier.weight(1f / 2f),
+										verticalArrangement = Arrangement.spacedBy(16.dp)
+									) {
+										Column(
+											verticalArrangement = Arrangement.spacedBy(8.dp),
+											modifier = Modifier.padding(horizontal = 12.dp)
+										) {
+											Text(
+												text = stringResource(id = R.string.description),
+												style = MaterialTheme.typography.displayMedium,
+												color = Neutrals100
+											)
+
+											Column(
+												modifier = Modifier.fillMaxWidth(),
+												verticalArrangement = Arrangement.spacedBy(2.dp)
+											) {
+												Text(
+													text = stringResource(id = description),
+													style = MaterialTheme.typography.bodyMedium,
+													color = Neutrals200,
+													maxLines = if (viewModel.isDescriptionExpanded) 30 else 2,
+													overflow = TextOverflow.Ellipsis
+												)
+												Text(
+													text = if (viewModel.isDescriptionExpanded)
+														stringResource(id = R.string.read_less)
+													else
+														stringResource(id = R.string.read_more),
+													style = MaterialTheme.typography.bodyMedium,
+													color = Primary,
+													modifier = Modifier.clickableNoRipple { viewModel.toggleIsDescriptionExpanded() }
+												)
+											}
+										}
+
+										Column(
+											verticalArrangement = Arrangement.spacedBy(12.dp),
+											modifier = Modifier.padding(horizontal = 12.dp)
+										) {
+											Text(
+												text = stringResource(id = R.string.size),
+												style = MaterialTheme.typography.bodyLarge,
+												color = Neutrals200
+											)
+
+											Row(
+												modifier = Modifier.fillMaxWidth(),
+												horizontalArrangement = Arrangement.spacedBy(8.dp)
+											) {
+												for ((count, size) in coffeeSize.withIndex()) {
+													SizeDisplay(
+														size = size,
+														isSelected = if (viewModel.selectedCoffeeSize == null)
+															count == 0
+														else
+															viewModel.selectedCoffeeSize!!.size == size.size,
+														modifier = Modifier.weight(1f / 3f),
+														count = count+1,
+														setCoffeeSize = { viewModel.selectCoffeeSize(size) }
+													)
+												}
+											}
+										}
+									}
+
+									Column(
+										modifier.weight(1f / 2f)
+									) {
+										CoffeeDetailsDisplay(
+											imageResID = imageResID,
+											titleRedID = name,
+											variant = variant,
+											ratings = rating,
+											reviews = reviews,
+											coffeeType = roastingLevel.roastingLevel,
+											onBackButtonClicked = onBackButtonClicked
 										)
 									}
 								}
