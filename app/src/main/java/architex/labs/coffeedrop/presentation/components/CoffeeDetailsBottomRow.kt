@@ -51,7 +51,7 @@ fun CoffeeDetailsBottomRow(
 				color = Neutrals200
 			)
 
-			Row {
+			Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
 				Text(
 					text = stringResource(id = R.string.dollar_sign),
 					style = MaterialTheme.typography.displayMedium,
@@ -77,7 +77,7 @@ fun CoffeeDetailsBottomRow(
 					text = stringResource(id = R.string.order_now),
 					style = MaterialTheme.typography.bodyLarge,
 					color = Neutrals100,
-					modifier = Modifier.padding(top = 8.dp)
+					modifier = Modifier.padding(vertical = 8.dp)
 				)
 			},
 			modifier = Modifier.width(220.dp)

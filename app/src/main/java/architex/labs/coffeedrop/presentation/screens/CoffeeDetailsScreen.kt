@@ -152,6 +152,20 @@ fun CoffeeDetailsScreen(
 									horizontalArrangement = Arrangement.spacedBy(16.dp)
 								) {
 									Column(
+										modifier.weight(1f / 2f)
+									) {
+										CoffeeDetailsDisplay(
+											imageResID = imageResID,
+											titleRedID = name,
+											variant = variant,
+											ratings = rating,
+											reviews = reviews,
+											coffeeType = roastingLevel.roastingLevel,
+											onBackButtonClicked = onBackButtonClicked
+										)
+									}
+
+									Column(
 										modifier = Modifier.weight(1f / 2f),
 										verticalArrangement = Arrangement.spacedBy(16.dp)
 									) {
@@ -216,19 +230,14 @@ fun CoffeeDetailsScreen(
 												}
 											}
 										}
-									}
 
-									Column(
-										modifier.weight(1f / 2f)
-									) {
-										CoffeeDetailsDisplay(
-											imageResID = imageResID,
-											titleRedID = name,
-											variant = variant,
-											ratings = rating,
-											reviews = reviews,
-											coffeeType = roastingLevel.roastingLevel,
-											onBackButtonClicked = onBackButtonClicked
+										CoffeeDetailsBottomRow(
+											modifier = Modifier.padding(
+												top = 16.dp,
+												start = 12.dp,
+												end = 12.dp
+											),
+											price = price
 										)
 									}
 								}
