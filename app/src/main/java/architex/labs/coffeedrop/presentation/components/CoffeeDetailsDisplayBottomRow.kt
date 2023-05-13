@@ -34,6 +34,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.theme.Accent
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
@@ -81,13 +82,13 @@ fun CoffeeDetailsDisplayBottomRow(
 			horizontalAlignment = Alignment.CenterHorizontally
 		) {
 			Row(
-				horizontalArrangement = Arrangement.spacedBy(4.dp)
+				horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.Start),
 			) {
 				Box(
 					contentAlignment = Alignment.Center,
 					modifier = modifier
 						.clip(RoundedCornerShape(12.dp))
-						.size(48.dp)
+						.size(40.dp)
 						.background(Neutrals100)
 				) {
 					Icon(
@@ -101,7 +102,7 @@ fun CoffeeDetailsDisplayBottomRow(
 					contentAlignment = Alignment.Center,
 					modifier = modifier
 						.clip(RoundedCornerShape(12.dp))
-						.size(48.dp)
+						.size(40.dp)
 						.background(Neutrals100)
 				) {
 					Icon(
@@ -115,8 +116,9 @@ fun CoffeeDetailsDisplayBottomRow(
 
 			Text(
 				text = coffeeType,
-				style = MaterialTheme.typography.titleSmall,
-				color = Neutrals100
+				style = MaterialTheme.typography.titleMedium,
+				color = Neutrals100,
+				fontSize = 14.sp
 			)
 		}
 	}

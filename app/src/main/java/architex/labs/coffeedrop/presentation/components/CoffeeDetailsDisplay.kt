@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -51,13 +52,13 @@ fun CoffeeDetailsDisplay(
 			.padding(12.dp)
 	) {
 		Box(
-			modifier = Modifier.widthIn(max = 400.dp)
+			modifier = Modifier.widthIn(max = 400.dp).height(440.dp)
 		) {
 			Column(
 				verticalArrangement = Arrangement.SpaceBetween,
 				modifier = Modifier
 					.zIndex(99f)
-					.height(434.dp)
+					.height(452.dp)
 			) {
 				CoffeeDetailsTopRow(
 					icons = Pair(R.drawable.icon_arrow_left, R.drawable.icon_heart_filled),
@@ -88,8 +89,9 @@ fun CoffeeDetailsDisplay(
 							topEnd = 24.dp,
 							bottomStart = 12.dp,
 							bottomEnd = 12.dp
+						)
 					)
-				)
+					.size(width = 400.dp, height = 460.dp)
 			)
 		}
 	}
