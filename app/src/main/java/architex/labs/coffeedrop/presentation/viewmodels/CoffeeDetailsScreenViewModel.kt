@@ -20,6 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import architex.labs.coffeedrop.domain.models.Coffee
+import architex.labs.coffeedrop.domain.models.sub_models.CoffeeSize
 import architex.labs.coffeedrop.domain.repository.CoffeeList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -31,6 +32,7 @@ class CoffeeDetailsScreenViewModel @Inject constructor (
 	private var selectedCoffeeID: Int? by mutableStateOf(null)
 	var selectedCoffee: Coffee? by mutableStateOf(null)
 	var isDescriptionExpanded: Boolean by mutableStateOf(false)
+	var selectedCoffeeSize: CoffeeSize? by mutableStateOf(null)
 
 	fun setCoffeeID(id: Int) {
 		selectedCoffeeID = id
@@ -42,4 +44,6 @@ class CoffeeDetailsScreenViewModel @Inject constructor (
 	fun toggleIsDescriptionExpanded() {
 		isDescriptionExpanded = !isDescriptionExpanded
 	}
+
+
 }

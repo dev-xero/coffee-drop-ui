@@ -41,6 +41,7 @@
     <string name="description">Description</string>
     <string name="read_more">read more</string>
     <string name="read_less">read less</string>
+    <string name="size">Size</string>
 
     <string name="cappuccino">Cappuccino</string>
     <string name="mocha">Mocha</string>

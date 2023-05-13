@@ -15,9 +15,11 @@
  */
 package architex.labs.coffeedrop.presentation.screens
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -32,6 +34,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import architex.labs.coffeedrop.R
 import architex.labs.coffeedrop.presentation.components.CoffeeDetailsDisplay
+import architex.labs.coffeedrop.presentation.components.SizeDisplay
 import architex.labs.coffeedrop.presentation.theme.Neutrals100
 import architex.labs.coffeedrop.presentation.theme.Neutrals200
 import architex.labs.coffeedrop.presentation.theme.Neutrals400
@@ -97,6 +100,35 @@ fun CoffeeDetailsScreen(
 										color = Primary,
 										modifier = Modifier.clickableNoRipple { viewModel.toggleIsDescriptionExpanded() }
 									)
+								}
+							}
+
+							Column(
+								verticalArrangement = Arrangement.spacedBy(12.dp),
+								modifier = Modifier.padding(horizontal = 12.dp)
+							) {
+								Text(
+									text = stringResource(id = R.string.size),
+									style = MaterialTheme.typography.bodyLarge,
+									color = Neutrals200
+								)
+
+								Row(
+									modifier = Modifier.fillMaxWidth(),
+									horizontalArrangement = Arrangement.spacedBy(8.dp)
+								) {
+									for ((count, size) in coffeeSize.withIndex()) {
+										SizeDisplay(
+											size = size,
+											isSelected = if (viewModel.selectedCoffeeSize == null)
+												count == 0
+											else
+												viewModel.selectedCoffeeSize!!.size == size.size,
+											modifier = Modifier.weight(1f / 3f),
+											count = count+1,
+											setCoffeeSize = { Log.d("COFFEE_DEBUG", size.toString()) }
+										)
+									}
 								}
 							}
 						}

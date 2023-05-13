@@ -15,7 +15,6 @@
  */
 package architex.labs.coffeedrop.presentation.viewmodels
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -81,7 +80,6 @@ class HomeScreenViewModel @Inject constructor (
 
 	fun setSelectedCoffee(id: Int) {
 		selectedCoffeeID = id
-		Log.d("COFFEE_DEBUG", coffeeList.list.toString())
 	}
 
 }
