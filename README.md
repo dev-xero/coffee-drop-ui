@@ -10,4 +10,4 @@ Coffee App UI Built with Kotlin and Jetpack Compose. The design is inspired by t
 </p>
 
 ## Try out the app
-If you're looking for something you can run...just wait a little till I upload it, because I'm kinda lazy.
+<p>If you're looking for something you can run, just head over to the <a href="https://github.com/dev-xero/coffee-drop-ui/releases/tag/v1.0">releases page.</a></p>
