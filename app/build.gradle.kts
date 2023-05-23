@@ -51,7 +51,7 @@ dependencies {
     val splashScreenVersion = "1.0.1"
     val viewModelVersion = "2.6.1"
     val navigationComposeVersion = "2.5.3"
-    val daggerVersion = "2.44.2"
+    val daggerVersion = "2.46.1"
     val hiltVersion = "1.0.0"
 
     implementation ("androidx.core:core-ktx:$coreVersion")
